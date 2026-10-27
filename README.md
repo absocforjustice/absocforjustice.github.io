@@ -1,6 +1,6 @@
 # ABSoc for Justice (AFJ)
 
-Static website for ABSoC for Justice — a student-led initiative campaigning for
+Static website for ABSoc for Justice — a student-led initiative campaigning for
 justice through education and empowerment.
 
 **Live site:** https://absocforjustice.github.io
