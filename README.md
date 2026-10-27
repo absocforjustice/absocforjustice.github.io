@@ -3,7 +3,7 @@
 Static website for ABSoC for Justice — a student-led initiative campaigning for
 justice through education and empowerment.
 
-**Live site:** https://absocforjustice.netlify.app
+**Live site:** https://absocforjustice.github.io
 
 ---
 
@@ -140,38 +140,43 @@ large files make the gallery slow on mobile.
 
 ## Publishing your changes
 
-The site is hosted on **Netlify**. There are two ways to update it.
+The site is hosted on **GitHub Pages**, served straight from the `main` branch
+of this repository.
 
-### Option A — drag and drop (no setup)
+**Push, and it deploys itself:**
 
-1. Go to **app.netlify.com** → the **absocforjustice** site → **Deploys** tab
-2. Drag this whole folder onto the drop zone
-3. Live in a few seconds, on the same URL
+```bash
+git add -A
+git commit -m "Describe what you changed"
+git push
+```
 
-> ⚠️ Don't use `netlify.com/drop` — that creates a **brand new site** with a
-> different random URL instead of updating this one. Use the **Deploys** tab.
+GitHub rebuilds the site automatically. It goes live at
+<https://absocforjustice.github.io> within a minute or so.
 
-Netlify keeps every past deploy, so you can roll back with one click if
-something breaks.
+There is no build step and no deploy configuration — the repository root *is*
+the published site. A file committed here is a file served there.
 
-### Option B — automatic deploys (recommended)
+> If your change doesn't appear, give it a minute, then hard-refresh
+> (`Ctrl + Shift + R`). You can watch the deploy under the repository's
+> **Actions** tab.
 
-Connect this repository to Netlify once, and every push deploys itself:
+### Rolling back
 
-1. Netlify → **Site configuration** → **Build & deploy** → **Link repository**
-2. Choose this GitHub repo
-3. Leave the build command **empty** and set the publish directory to `/`
-   (there's nothing to build)
+Every deploy corresponds to a commit, so undoing a bad change is just git:
 
-After that, `git push` is all it takes.
+```bash
+git revert HEAD     # undo the last commit, then push
+git push
+```
 
 ---
 
 ## Contributing
 
 ```bash
-git clone <this-repo-url>
-cd <folder>
+git clone https://github.com/absocforjustice/absocforjustice.github.io.git
+cd absocforjustice.github.io
 python -m http.server 8000      # check your change locally
 git add -A
 git commit -m "Describe what you changed"
@@ -202,7 +207,8 @@ the author must not be your personal name or address.
 
 - **Donate** is marked "Coming soon" — no payment platform connected yet
 - **The contact form** is front-end only; submissions go nowhere. To make it
-  work, connect it to Formspree, Google Forms or Netlify Forms
+  work, connect it to Formspree, Basin or a Google Form (GitHub Pages
+  serves static files only, so it cannot process form posts itself)
 - **Statements** and **Articles** are placeholder "coming soon" pages
 
 ---
