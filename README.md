@@ -188,12 +188,12 @@ Please keep commits focused and describe the actual change
 
 ### Privacy note for contributors
 
-Commits in this repository are authored as **ABSoC for Justice**, not under
+Commits in this repository are authored as **ABSoc for Justice**, not under
 personal names. If you clone and commit, set the identity **for this repo only**
 before you start:
 
 ```bash
-git config user.name "ABSoC for Justice"
+git config user.name "ABSoc for Justice"
 git config user.email "Info.absocforjustice@gmail.com"
 ```
 
@@ -205,7 +205,7 @@ the author must not be your personal name or address.
 
 ## Known gaps
 
-- **Donate** is marked "Coming soon" — no payment platform connected yet
+- **Donate** links to the Square donation page (Get Involved → Donate)
 - **The contact form** is front-end only; submissions go nowhere. To make it
   work, connect it to Formspree, Basin or a Google Form (GitHub Pages
   serves static files only, so it cannot process form posts itself)
