@@ -1008,3 +1008,19 @@ form.afj-form { display: grid; gap: 1rem; }
   .camp-art--top { aspect-ratio: 4 / 3; }
   .camp-art--top .camp-photo { background-position: center 62%; }
 }
+
+/* Free Fatema Zainab Rajwani feature (Britain campaign) */
+.fzr {
+  margin: 1.6rem 0; padding: clamp(1.3rem, 3vw, 1.8rem);
+  background: linear-gradient(160deg, var(--green-700), var(--green-900));
+  color: #ece3d3; border-radius: 14px; border-left: 5px solid var(--gold);
+  box-shadow: var(--shadow);
+}
+.fzr-kicker { margin: 0; color: var(--gold); font-weight: 700; font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; }
+.fzr h3 { color: #fff; font-size: clamp(1.5rem, 3vw, 2rem); margin: .2rem 0 .8rem; }
+.fzr p { color: #ece3d3; font-size: .98rem; }
+.fzr .fzr-lead { color: #fff; font-size: 1.05rem; }
+.fzr strong { color: #fff; }
+.fzr ul { margin: 0 0 1rem; padding-left: 1.1rem; }
+.fzr li { margin: .45rem 0; font-size: .95rem; color: #ece3d3; }
+.fzr .btn { margin-top: .4rem; }
