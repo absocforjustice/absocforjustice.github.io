@@ -1103,3 +1103,23 @@ form.afj-form { display: grid; gap: 1rem; }
 .af-hp { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; opacity: 0; }
 .af-count { margin: 0; font-weight: 700; color: var(--green-700); font-size: .95rem; }
 .af-count::before { content: "\2709\FE0E  "; color: var(--gold, #c8a24a); }
+
+/* ---------- Shop: coming soon ---------- */
+.page-hero--shop { background-image: linear-gradient(105deg, rgba(35,8,9,.88) 22%, rgba(45,11,12,.6) 100%), url("../img/gallery/msc-conference-stall.jpeg"); background-position: center 40%; }
+.soon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+@media (max-width: 780px) { .soon-grid { grid-template-columns: 1fr 1fr; } .soon-tile:last-child { grid-column: 1 / -1; aspect-ratio: 2 / 1; } }
+@media (max-width: 480px) { .soon-grid { grid-template-columns: 1fr; } .soon-tile:last-child { aspect-ratio: 1 / 1; } }
+.soon-tile {
+  position: relative; aspect-ratio: 1 / 1; border-radius: var(--radius); overflow: hidden;
+  display: grid; place-items: center; align-content: center; gap: .7rem; text-align: center;
+  background:
+    radial-gradient(circle at 70% 20%, rgba(200,162,74,.22), rgba(200,162,74,0) 55%),
+    linear-gradient(160deg, var(--green-700), var(--green-900));
+  color: #f3e7cf; box-shadow: var(--shadow); isolation: isolate;
+}
+.soon-tile::before { content: ""; position: absolute; inset: 12px; border: 1px solid rgba(200,162,74,.45); border-radius: calc(var(--radius) - 6px); z-index: -1; }
+.soon-tile svg { width: 44px; height: 44px; color: #c8a24a; }
+.soon-num { font-family: var(--font-head); font-weight: 700; font-size: clamp(2.6rem, 6vw, 4rem); line-height: 1; color: #c8a24a; }
+.soon-label { font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: rgba(243,231,207,.85); }
+.afj-waitlist .af-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 560px) { .afj-waitlist .af-row { grid-template-columns: 1fr; } }

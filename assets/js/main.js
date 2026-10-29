@@ -43,7 +43,7 @@
   }
 
   /* ---- Contact form: sends to info.absocforjustice@gmail.com via Web3Forms ---- */
-  var form = document.querySelector(".afj-form");
+  var form = document.querySelector(".afj-form:not(.afj-waitlist)");
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -94,6 +94,30 @@
         })
         .catch(function (err) { fallback(err && err.message); })
         .then(function () { btn.disabled = false; btn.textContent = "Send message"; });
+    });
+  }
+
+  /* ---- Shop waitlist: sends name + email to the AFJ inbox via Web3Forms ---- */
+  var wl = document.querySelector(".afj-waitlist");
+  if (wl) {
+    wl.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!wl.checkValidity()) { wl.reportValidity(); return; }
+      if (wl.querySelector('[name="botcheck"]').checked) return;
+      var st = wl.querySelector(".form-status"), b = wl.querySelector('button[type="submit"]');
+      var d = {}; new FormData(wl).forEach(function (v, k) { if (k !== "botcheck") d[k] = v; });
+      d.message = d.name + " (" + d.email + ") joined the merch waitlist.";
+      b.disabled = true; b.textContent = "Joining…";
+      function say(msg) { st.textContent = msg; st.style.display = "block"; }
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(d)
+      }).then(function (r) { return r.json(); }).then(function (j) {
+        if (j && j.success === true) { say("You\u2019re on the list! We\u2019ll email you as soon as the merch drops."); wl.reset(); }
+        else throw 0;
+      }).catch(function () {
+        st.innerHTML = 'Sorry, that didn\u2019t go through. Please email <a href="mailto:info.absocforjustice@gmail.com?subject=Merch%20waitlist">info.absocforjustice@gmail.com</a> with the subject \u201cMerch waitlist\u201d and we\u2019ll add you.';
+        st.style.display = "block";
+      }).then(function () { b.disabled = false; b.textContent = "Join the waitlist"; });
     });
   }
 
