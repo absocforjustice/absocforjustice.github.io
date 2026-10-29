@@ -932,3 +932,17 @@ form.afj-form { display: grid; gap: 1rem; }
 .camp-explainer p { color: #ece3d3; font-size: .98rem; }
 .camp-explainer p:last-child { margin-bottom: 0; }
 .camp-explainer strong { color: #fff; }
+
+/* ---------- Campaigns hero globe ---------- */
+.camp-hero { display: grid; grid-template-columns: 1.05fr .95fr; gap: 2rem; align-items: center; }
+.camp-globe { position: relative; width: 100%; max-width: 480px; justify-self: end; }
+.camp-globe canvas { display: block; width: 100%; touch-action: pan-y; cursor: grab; }
+.camp-globe canvas:active { cursor: grabbing; }
+.camp-globe-hint {
+  margin: -2.2rem 0 0; text-align: center; font-size: .75rem !important;
+  letter-spacing: .08em; text-transform: uppercase; color: rgba(232,196,104,.8) !important;
+}
+@media (max-width: 860px) {
+  .camp-hero { grid-template-columns: 1fr; gap: .5rem; }
+  .camp-globe { justify-self: center; max-width: 420px; margin-top: -.5rem; }
+}

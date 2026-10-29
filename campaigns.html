@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script>document.documentElement.className+=" js";</script>
-  <link rel="stylesheet" href="assets/css/style.css?v=20261029p">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261029r">
   <link rel="icon" href="assets/img/afj-logo.jpeg">
 </head>
 <body>
@@ -36,10 +36,16 @@
   </header>
 
   <section class="page-hero page-hero--campaigns">
-    <div class="container">
-      <p class="breadcrumb"><a href="index.html">Home</a> / Campaigns</p>
-      <h1>Campaigns</h1>
-      <p>Standing with the oppressed wherever they are &mdash; from Palestine and Lebanon to Bahrain, Azerbaijan, Pakistan, Kashmir and the holy cities of Medina and Mecca.</p>
+    <div class="container camp-hero">
+      <div class="camp-hero-copy">
+        <p class="breadcrumb"><a href="index.html">Home</a> / Campaigns</p>
+        <h1>Campaigns</h1>
+        <p>Standing with the oppressed wherever they are &mdash; from Palestine and Lebanon to Bahrain, Azerbaijan, Pakistan, Kashmir and the holy cities of Medina and Mecca.</p>
+      </div>
+      <div class="camp-globe">
+        <canvas id="afj-globe" role="img" aria-label="A spinning globe marking AFJ's six campaigns: Palestine, Lebanon, Azerbaijan, Bahrain, Pakistan and Jannat al-Baqi"></canvas>
+        <p class="camp-globe-hint">Drag to turn &middot; tap a name to jump to it</p>
+      </div>
     </div>
   </section>
 
@@ -50,7 +56,7 @@
   <section id="palestine" class="camp">
     <div class="container camp-grid">
       <div class="camp-art has-photo" aria-hidden="true">
-        <div class="camp-photo" style="background-image:url(assets/img/gallery/placard-karbala-palestine.jpeg)"></div>
+        <div class="camp-photo" style="background-image:url(assets/img/gallery/nakba-1948-refugees.jpeg)"></div>
         <span class="camp-num">01</span>
         <span class="camp-ar" lang="ar" dir="rtl">فلسطين</span>
       </div>
@@ -221,40 +227,6 @@
     </div>
   </section>
 
-  <section class="camp-sources">
-    <div class="container">
-      <details>
-        <summary>Sources for the facts on this page</summary>
-        <ul>
-          <li><a href="https://en.wikipedia.org/wiki/Balfour_Declaration" target="_blank" rel="noopener">Balfour Declaration (Wikipedia)</a></li>
-          <li><a href="https://en.wikipedia.org/wiki/Nakba" target="_blank" rel="noopener">Nakba (Wikipedia)</a></li>
-          <li><a href="https://www.thepeninsulaqatar.com/article/06/04/2026/9600-palestinians-held-in-israeli-occupation-prisons-palestinian-prisoner-organizations" target="_blank" rel="noopener">9,600 Palestinians held in Israeli occupation prisons, 6 April 2026 (The Peninsula / QNA)</a></li>
-          <li><a href="https://davidrobie.nz/2026/01/protesters-demand-freedom-for-9000-palestinian-political-prisoners-held-hostage-by-israel/" target="_blank" rel="noopener">Protesters demand freedom for 9,000+ Palestinian political prisoners; 3,544 in administrative detention, January 2026 (Asia Pacific Report)</a></li>
-          <li><a href="https://www.middleeastmonitor.com/20260220-lancet-study-gaza-death-toll-50-higher-than-previously-reported/" target="_blank" rel="noopener">Lancet study: Gaza death toll 50% higher than previously reported, 20 February 2026 (Middle East Monitor)</a></li>
-          <li><a href="https://live.libnanews.com/event/ev-1788662803378-5f49" target="_blank" rel="noopener">Gaza health ministry figures to 5 September 2026 (Libnanews)</a></li>
-          <li><a href="https://www.janes.com/defence-intelligence-insights/defence-news/air/iran-conflict-2026-airstrikes-hit-beiruts-dahieh-southern-eastern-lebanon-as-idf-launches-offensive-against-hizbullah" target="_blank" rel="noopener">Airstrikes hit Beirut's Dahieh as IDF launches offensive, 2 March 2026 (Janes)</a></li>
-          <li><a href="https://www.newarab.com/news/israel-kills-three-fresh-strikes-southern-beirut" target="_blank" rel="noopener">Israel launches fresh strikes and evacuation orders in southern Beirut, 14 June 2026 (The New Arab)</a></li>
-          <li><a href="https://www.aljazeera.com/news/2026/10/12/azerbaijans-school-hijab-ban-whats-behind-it-and-whats-next" target="_blank" rel="noopener">Azerbaijan's school hijab ban: what's behind it, 12 October 2026 (Al Jazeera)</a></li>
-          <li><a href="https://www.amnesty.org/en/latest/news/2026/10/azerbaijan-stop-denying-access-to-education-through-discriminatory-hijab-restrictions-and-release-peaceful-protesters/" target="_blank" rel="noopener">Azerbaijan: stop denying access to education through hijab restrictions, 16 October 2026 (Amnesty International)</a></li>
-          <li><a href="https://www.adhrb.org/2026/08/joint-statement-bahrain-must-end-the-systematic-religious-persecution-of-shia-citizens/" target="_blank" rel="noopener">Joint statement: Bahrain must end the persecution of Shia citizens, 3 August 2026 (ADHRB)</a></li>
-          <li><a href="https://www.hrw.org/world-report/2024/country-chapters/bahrain" target="_blank" rel="noopener">World Report 2024: Bahrain (Human Rights Watch)</a></li>
-          <li><a href="https://en.wikipedia.org/wiki/January_2013_Pakistan_bombings" target="_blank" rel="noopener">January 2013 Pakistan bombings (Wikipedia)</a></li>
-          <li><a href="https://en.wikipedia.org/wiki/February_2013_Quetta_bombing" target="_blank" rel="noopener">February 2013 Quetta bombing (Wikipedia)</a></li>
-          <li><a href="https://longwarjournal.org/archives/2015/01/at_least_55_killed_in.php" target="_blank" rel="noopener">At least 55 killed in Shikarpur suicide bombing, 30 January 2015 (Long War Journal)</a></li>
-          <li><a href="https://nukta.com/1405-people-killed-parachinar-kurram" target="_blank" rel="noopener">1,405 killed in Kurram over two decades: Interior Ministry, 3 March 2025 (Nukta)</a></li>
-          <li><a href="https://www.rferl.org/a/pakistan-sectarian-violence-blockade-parachinar-crisis/33248003.html" target="_blank" rel="noopener">'Our children are dying': sectarian violence in Parachinar, 21 December 2024 (RFE/RL)</a></li>
-          <li><a href="https://www.worldpoliticsreview.com/india-kashmir-article-370-abrogation/" target="_blank" rel="noopener">In Kashmir, scars from India's revocation of autonomy, 10 August 2026 (World Politics Review)</a></li>
-          <li><a href="https://en.wikipedia.org/wiki/Demolition_of_al-Baqi" target="_blank" rel="noopener">Demolition of al-Baqi (Wikipedia)</a></li>
-          <li><a href="https://en.wikipedia.org/wiki/Al-Baqi_Cemetery" target="_blank" rel="noopener">Al-Baqi Cemetery (Wikipedia)</a></li>
-          <li><a href="https://www.al-islam.org/shrines/baqi.htm" target="_blank" rel="noopener">The history of Jannat al-Baqi (Al-Islam.org)</a></li>
-          <li><a href="https://www.hrw.org/report/2009/09/03/denied-dignity/systematic-discrimination-and-hostility-toward-saudi-shia-citizens" target="_blank" rel="noopener">Denied Dignity: discrimination against Saudi Shia citizens, 2009 (Human Rights Watch)</a></li>
-          <li><a href="https://thekashmirwalla.com/saudi-arabia-allows-shia-pilgrims-to-visit-jannat-ul-baqi-in-medina/" target="_blank" rel="noopener">Saudi Arabia allows Shia pilgrims to visit Jannat ul Baqi, 12 June 2023 (The Kashmir Walla)</a></li>
-          <li><a href="https://www.pewresearch.org/religion/2009/10/07/mapping-the-global-muslim-population/" target="_blank" rel="noopener">Mapping the Global Muslim Population, 2009 (Pew Research Center)</a></li>
-        </ul>
-      </details>
-    </div>
-  </section>
-
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -289,6 +261,8 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=20261029p"></script>
+  <script src="assets/js/main.js?v=20261029r"></script>
+  <script src="assets/js/globe-land.js?v=20261029r"></script>
+  <script src="assets/js/globe.js?v=20261029r"></script>
 </body>
 </html>
