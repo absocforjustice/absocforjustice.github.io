@@ -1,0 +1,225 @@
+/* =========================================================
+   Reading list — 3D books that enlarge and open on hover/tap
+   ========================================================= */
+
+.rl-intro {
+  text-align: center; color: var(--muted); font-size: .95rem;
+  margin: 0 auto 2.6rem; max-width: 560px;
+}
+.rl-intro strong { color: var(--green-700); }
+
+.shelf {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 2.4rem 1.8rem;
+  padding: .4rem 0 1rem;
+}
+@media (max-width: 520px) {
+  .shelf { grid-template-columns: repeat(2, 1fr); gap: 2rem 1.2rem; }
+}
+
+/* ---- One book ---- */
+.rbook {
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.rbook-stage {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  perspective: 1800px;
+}
+.rbook-3d {
+  position: absolute; inset: 0;
+  transform-style: preserve-3d;
+  transform-origin: 0 50%;            /* the spine: the book scales out from it */
+  transition: transform .55s cubic-bezier(.2, .75, .25, 1);
+}
+
+/* Inside page (revealed when the cover swings open) */
+.rbook-page {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgba(63,17,19,.10), rgba(63,17,19,0) 9%),
+    #fbf7f0;
+  border-radius: 1px 5px 5px 1px;
+  box-shadow: inset 0 0 0 1px rgba(63,17,19,.10);
+  font-size: var(--fs, 11px);
+  padding: 1.1em 1.1em 1.2em 1.4em;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) transparent;
+  visibility: hidden;                 /* hidden until opened, so it can't flash through */
+  transition: visibility 0s linear .55s;
+}
+.rbook-page h3 {
+  font-family: var(--font-head);
+  font-size: 1.45em; line-height: 1.15;
+  color: var(--green-800);
+  margin: 0 0 .25em;
+}
+.rbook-page .author {
+  color: var(--gold-dark);
+  font-weight: 600; font-size: .95em;
+  margin: 0 0 .8em;
+  padding-bottom: .7em;
+  border-bottom: 1px solid var(--line);
+}
+.rbook-page p { font-size: 1em; line-height: 1.55; color: #3b3230; margin: 0 0 .7em; }
+.rbook-page .rbook-links { margin-top: .9em; display: flex; flex-wrap: wrap; gap: .5em; }
+.rbook-page .rbook-links a {
+  font-size: .9em; font-weight: 600;
+  color: var(--green-700);
+  border: 1px solid var(--gold); border-radius: 999px;
+  padding: .3em .85em;
+  text-decoration: none;
+}
+.rbook-page .rbook-links a:hover { background: var(--gold); color: var(--green-900); }
+.rbook-page .tbr { font-style: italic; color: var(--muted); font-size: .9em; }
+
+/* Cover: hinged on the left edge */
+.rbook-cover {
+  position: absolute; inset: 0;
+  transform-style: preserve-3d;
+  transform-origin: 0 50%;
+  transform: translateZ(1px);
+  transition: transform .75s cubic-bezier(.5, .05, .25, 1);
+}
+.rbook-front, .rbook-back {
+  position: absolute; inset: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 2px 6px 6px 2px;
+  overflow: hidden;
+}
+.rbook-front {
+  background: linear-gradient(160deg, var(--green-600), var(--green-900));
+  box-shadow:
+    0 14px 24px -10px rgba(40, 10, 11, .55),
+    0 4px 8px rgba(40, 10, 11, .18);
+  transition: box-shadow .4s ease;
+}
+.rbook-front img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Spine crease + light sheen so a flat cover reads as a book */
+.rbook-front::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(90deg,
+      rgba(0,0,0,.30) 0, rgba(0,0,0,.08) 3%, rgba(255,255,255,.18) 4.5%,
+      rgba(255,255,255,0) 8%, rgba(0,0,0,0) 92%, rgba(0,0,0,.10) 100%);
+}
+/* Fallback cover when an image can't load */
+.rbook-front.is-typeset {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 14% 12%;
+  text-align: center;
+  border: 0;
+}
+.rbook-front.is-typeset::before {
+  content: ""; position: absolute; inset: 6%;
+  border: 1px solid rgba(200,162,74,.6); border-radius: 2px;
+}
+.rbook-front.is-typeset .tt {
+  font-family: var(--font-head); color: #fff; text-transform: uppercase;
+  font-size: clamp(.8rem, 1.6vw, 1.05rem); line-height: 1.15; letter-spacing: .02em;
+}
+.rbook-front.is-typeset .ta {
+  margin-top: .7em; color: var(--gold); font-size: .72rem; font-weight: 600;
+}
+
+/* Inside of the cover, seen once it has swung open */
+.rbook-back {
+  transform: rotateY(180deg);
+  background:
+    radial-gradient(circle at 50% 42%, rgba(200,162,74,.16), rgba(200,162,74,0) 55%),
+    linear-gradient(160deg, var(--green-700), var(--green-900));
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center;
+  padding: 12%;
+  font-size: var(--fs, 11px);
+}
+.rbook-back::before {
+  content: ""; position: absolute; inset: 5%;
+  border: 1px solid rgba(200,162,74,.45); border-radius: 2px;
+}
+.rbook-back .ex {
+  font-family: var(--font-head); text-transform: uppercase; letter-spacing: .18em;
+  color: var(--gold); font-size: .85em;
+}
+.rbook-back .mark { font-size: 2.4em; color: var(--gold); line-height: 1; margin: .5em 0; }
+.rbook-back .cat { color: #e9dfcf; font-size: .95em; font-style: italic; }
+
+/* Caption under each book */
+.rbook-caption { margin-top: .85rem; transition: opacity .3s ease; }
+.rbook-caption h3 {
+  font-size: .98rem; line-height: 1.25; margin: 0 0 .2rem;
+  color: var(--ink);
+}
+.rbook-caption p { margin: 0; font-size: .82rem; font-weight: 600; color: var(--gold-dark); }
+
+/* ---- Idle hover cue (before it opens) ---- */
+@media (hover: hover) {
+  .rbook:not(.is-open):hover .rbook-3d { transform: translateY(-4px); }
+}
+.rbook:focus-visible .rbook-front { box-shadow: 0 0 0 3px var(--gold), 0 14px 24px -10px rgba(40,10,11,.55); }
+
+/* ---- Open state ---- */
+.rbook.is-open { z-index: 40; }
+.rbook.is-focus { z-index: 1001; }
+.rbook.is-open .rbook-3d {
+  transform: translate(var(--dx, 0px), var(--dy, 0px)) scale(var(--s, 1.4));
+}
+.rbook.is-open .rbook-cover { transform: translateZ(1px) rotateY(-178deg); }
+.rbook.is-open .rbook-page {
+  visibility: visible;
+  transition: visibility 0s;
+  box-shadow:
+    inset 0 0 0 1px rgba(63,17,19,.10),
+    18px 26px 46px -18px rgba(30, 6, 7, .55);
+}
+.rbook.is-open .rbook-front { box-shadow: none; }
+.rbook.is-open .rbook-back { box-shadow: -18px 26px 46px -18px rgba(30, 6, 7, .55); }
+.rbook.is-open .rbook-caption { opacity: 0; }
+
+/* Narrow screens: only the page is shown, the cover swings away off to the side */
+.rbook.is-open.is-solo .rbook-back { opacity: 0; transition: opacity .3s ease .35s; }
+
+/* Close button (tap / click mode only) */
+.rbook-close {
+  position: absolute; top: .45em; right: .45em; z-index: 2;
+  width: 2.2em; height: 2.2em; border-radius: 50%;
+  border: 0; background: var(--green-800); color: #fff;
+  font-size: var(--fs, 11px); line-height: 1; cursor: pointer;
+  display: none; place-items: center;
+}
+.rbook.is-focus .rbook-close { display: grid; }
+.rbook.is-focus .rbook-page h3 { padding-right: 2em; }
+
+/* Dimmed backdrop for tap / click mode */
+.rbook-backdrop {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(30, 8, 9, .62);
+  -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+  opacity: 0; pointer-events: none;
+  transition: opacity .35s ease;
+}
+.rbook-backdrop.on { opacity: 1; pointer-events: auto; }
+
+/* Other non-book entries (documentaries, writings, speeches) */
+.rl-more {
+  margin-top: 1.4rem; padding: 1rem 1.2rem;
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.rl-more h4 {
+  font-family: var(--font-head); text-transform: uppercase; letter-spacing: .08em;
+  font-size: .85rem; color: var(--gold-dark); margin: 0 0 .5rem;
+}
+.rl-more ul { margin: 0; padding-left: 1.1rem; }
+.rl-more li { margin: .25rem 0; color: var(--muted); font-size: .93rem; }
+.rl-more a { color: var(--green-700); font-weight: 600; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rbook-3d, .rbook-cover, .rbook-page, .rbook-caption, .rbook-backdrop { transition: none !important; }
+}
