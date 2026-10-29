@@ -123,6 +123,17 @@
   }
 
   books.forEach(function (book) {
+    /* Leaves that flip over as the book opens */
+    var cover = book.querySelector(".rbook-cover");
+    if (cover && !book.querySelector(".rbook-leaf")) {
+      for (var L = 0; L < 4; L++) {
+        var leaf = document.createElement("div");
+        leaf.className = "rbook-leaf";
+        leaf.setAttribute("aria-hidden", "true");
+        leaf.innerHTML = "<span></span><span></span>";
+        cover.parentNode.insertBefore(leaf, cover);
+      }
+    }
     var title = (book.querySelector(".rbook-caption h3") || {}).textContent || "book";
     book.setAttribute("tabindex", "0");
     book.setAttribute("role", "button");
