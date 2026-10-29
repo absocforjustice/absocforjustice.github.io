@@ -1259,3 +1259,6 @@ form.afj-form { display: grid; gap: 1rem; }
   .nav-links > li.nav-contact + li.nav-involved { margin-left: .5rem; }
 }
 @media (max-width: 1180px) { .nav-contact + .nav-involved { margin-top: .5rem; } }
+/* Gallery: placard captions always visible */
+.m-tall figcaption { display: block !important; opacity: 1 !important; transform: none !important; }
+@media (max-width: 600px) { .m-tall figcaption { font-size: .72rem; padding: 1.6rem .6rem .55rem; } }
