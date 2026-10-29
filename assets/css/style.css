@@ -161,7 +161,7 @@ p { margin: 0 0 1.1em; }
   position: relative;
   background:
     linear-gradient(105deg, rgba(35,8,9,.92) 30%, rgba(45,11,12,.72) 100%),
-    url("../img/gallery/protest-hussain-justice.jpeg") center 25%/cover no-repeat,
+    url("../img/gallery/protest-hussain-justice.jpeg") center 3%/cover no-repeat,
     var(--green-900);
   color: #fff;
   padding: clamp(4.5rem, 11vw, 8.5rem) 0;
