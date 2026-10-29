@@ -1252,3 +1252,4 @@ form.afj-form { display: grid; gap: 1rem; }
   .m-item figcaption { font-size: .78rem; padding: 1.8rem .7rem .65rem; }
 }
 .m-full { grid-column: 1 / -1; grid-row: span 2; }
+@media (max-width: 600px) { .m-tall figcaption { display: none; } }   /* placard words are readable in the photo; full caption shows when tapped */
