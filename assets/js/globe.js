@@ -21,11 +21,11 @@
     ["Bahrain", "06", 50.6, 26.2, "bahrain", 1, 1.6],
     ["Pakistan", "07", 70.1, 30.5, "pakistan", 1, 0.8],
     ["Jannat al-Baqi", "08", 39.6, 24.5, "baqi", -1, 2.0],
-    ["Nigeria", "09", 7.7, 11.1, "nigeria", -1, 0.1],
+    ["Nigeria", "13", 7.7, 11.1, "nigeria", -1, 0.1],
     ["Afghanistan", "10", 67.0, 34.6, "hazara", 1, -0.4],
     ["Sudan", "11", 29.5, 15.0, "sudan", -1, 3.2],
-    ["Yemen", "12", 46.0, 15.6, "yemen", 1, 3.4],
-    ["India", "13", 78.9, 22.6, "india", 1, 2.6]
+    ["Yemen", "09", 46.0, 15.6, "yemen", 1, 3.4],
+    ["India", "12", 78.9, 22.6, "india", 1, 2.6]
   ].map(function (p) {
     return { name: p[0], num: p[1], lam: p[2] * D, phi: p[3] * D, id: p[4], dx: p[5], dy: p[6] };
   });
