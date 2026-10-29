@@ -1024,3 +1024,51 @@ form.afj-form { display: grid; gap: 1rem; }
 .fzr ul { margin: 0 0 1rem; padding-left: 1.1rem; }
 .fzr li { margin: .45rem 0; font-size: .95rem; color: #ece3d3; }
 .fzr .btn { margin-top: .4rem; }
+
+/* Campaigns hero: Arabic line */
+.camp-hero-ar {
+  font-family: "Amiri", "Scheherazade New", "Traditional Arabic", serif; font-weight: 700;
+  color: var(--gold) !important; font-size: clamp(1.4rem, 2.8vw, 1.9rem) !important; line-height: 1.6;
+  margin: .4rem 0 .2rem; text-align: left;
+}
+
+/* Britain campaign: National / Students parts */
+.brit-tabs { display: flex; gap: .5rem; flex-wrap: wrap; margin: 0 0 1.4rem; }
+.brit-tabs a {
+  padding: .4rem .9rem; border-radius: 999px; border: 1px solid var(--gold);
+  font-weight: 700; font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; color: var(--green-800);
+}
+.brit-tabs a:hover { background: var(--gold); color: var(--green-900); }
+.brit-part {
+  display: flex; align-items: center; gap: .7rem; scroll-margin-top: 140px;
+  font-size: 1.05rem; letter-spacing: .14em; text-transform: uppercase; color: var(--green-800);
+  margin: 2rem 0 1rem; padding-bottom: .6rem; border-bottom: 2px solid rgba(169,134,58,.45);
+}
+.brit-part span {
+  width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; flex: 0 0 auto;
+  background: var(--green-800); color: var(--gold); font-family: Georgia, serif; font-size: .95rem; letter-spacing: 0;
+}
+.camp-body .brit-part:first-of-type { margin-top: .4rem; }
+.stu-card {
+  background: var(--paper); border: 1px solid var(--line); border-left: 4px solid var(--gold);
+  border-radius: 12px; padding: 1.1rem 1.3rem; margin: 1rem 0; box-shadow: 0 8px 22px -16px rgba(63,17,19,.35);
+}
+.stu-card h4 { margin: 0 0 .5rem; font-size: 1.15rem; color: var(--green-800); }
+.stu-card p { font-size: .97rem; color: var(--ink); }
+.stu-card .btn { margin-top: .2rem; }
+
+/* Campaign jump bar: slow scrolling strip, pauses on hover/touch */
+.camp-index .ci-viewport {
+  overflow: hidden; padding: .75rem 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+}
+.camp-index .ci-track { display: flex; width: max-content; animation: ci-scroll 45s linear infinite; }
+.camp-index .ci-group { display: flex; gap: .5rem; padding-right: .5rem; }
+.camp-index:hover .ci-track, .camp-index:focus-within .ci-track, .camp-index.paused .ci-track { animation-play-state: paused; }
+@keyframes ci-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .camp-index .ci-viewport { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+  .camp-index .ci-track { animation: none; }
+  .camp-index .ci-group[aria-hidden="true"] { display: none; }
+}

@@ -62,3 +62,12 @@
   var y = document.querySelector("[data-year]");
   if (y) y.textContent = new Date().getFullYear();
 })();
+
+/* Campaign jump bar: pause while touched */
+(function () {
+  var bar = document.querySelector(".camp-index");
+  if (!bar) return;
+  var t;
+  bar.addEventListener("touchstart", function () { clearTimeout(t); bar.classList.add("paused"); }, { passive: true });
+  bar.addEventListener("touchend", function () { t = setTimeout(function () { bar.classList.remove("paused"); }, 2500); }, { passive: true });
+})();
