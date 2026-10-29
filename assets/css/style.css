@@ -819,8 +819,8 @@ form.afj-form { display: grid; gap: 1rem; }
 
 /* ---------- Home: campaigns strip ---------- */
 .home-campaigns { background: var(--cream); }
-.hc-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
-@media (max-width: 1040px) { .hc-grid { grid-template-columns: repeat(2, 1fr); } }
+.hc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+@media (max-width: 900px) { .hc-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .hc-grid { grid-template-columns: 1fr; } }
 .hc-card {
   display: flex; flex-direction: column; gap: .6rem; min-height: 200px;
@@ -923,3 +923,12 @@ form.afj-form { display: grid; gap: 1rem; }
 .action-address h3 { margin: 0 0 .5rem; font-size: 1rem; }
 .action-address address { font-style: normal; line-height: 1.6; color: var(--ink); }
 .action-address p { margin: .6rem 0 0; }
+
+.camp-explainer {
+  margin: 1.4rem 0; padding: 1.3rem 1.4rem;
+  background: var(--green-800); color: #ece3d3; border-radius: 12px;
+}
+.camp-explainer h3 { color: var(--gold); font-size: 1rem; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 .6rem; }
+.camp-explainer p { color: #ece3d3; font-size: .98rem; }
+.camp-explainer p:last-child { margin-bottom: 0; }
+.camp-explainer strong { color: #fff; }
