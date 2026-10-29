@@ -693,7 +693,7 @@ form.afj-form { display: grid; gap: 1rem; }
 }
 .page-hero--about { background-image: linear-gradient(105deg, rgba(35,8,9,.86) 22%, rgba(45,11,12,.60) 100%), url("../img/gallery/fatema-zainab-panel.jpeg"); }
 .page-hero--work { background-image: linear-gradient(105deg, rgba(35,8,9,.86) 22%, rgba(45,11,12,.60) 100%), url("../img/gallery/event-panel-keffiyeh.jpeg"); }
-.page-hero--gallery { background-image: linear-gradient(105deg, rgba(35,8,9,.86) 22%, rgba(45,11,12,.60) 100%), url("../img/gallery/hussain-placard-march.jpeg"); background-position: center 30%; }
+.page-hero--gallery { background-image: linear-gradient(100deg, rgba(35,8,9,.92) 18%, rgba(35,8,9,.55) 45%, rgba(35,8,9,.2) 100%), url("../img/gallery/banner-enemy-oppressor.jpeg"); background-position: 70% center; background-size: cover; }
 .page-hero--reading { background-image: linear-gradient(105deg, rgba(35,8,9,.86) 22%, rgba(45,11,12,.60) 100%), url("../img/gallery/hall-packed-audience.jpeg"); }
 .page-hero--statements { background-image: linear-gradient(105deg, rgba(35,8,9,.86) 22%, rgba(45,11,12,.60) 100%), url("../img/gallery/placard-zaynab.jpeg"); }
 .page-hero--involved { background-image: linear-gradient(105deg, rgba(35,8,9,.86) 22%, rgba(45,11,12,.60) 100%), url("../img/gallery/event-who-is-hussain.jpeg"); }
@@ -1267,3 +1267,14 @@ form.afj-form { display: grid; gap: 1rem; }
   .g-mosaic .m-big figcaption, .g-mosaic .m-full figcaption { font-size: .76rem; }
 }
 .g-mosaic .m-captop figcaption { top: 0; bottom: auto; padding-top: .8rem; padding-bottom: 2rem; background: linear-gradient(0deg, rgba(20,4,5,0), rgba(20,4,5,.88) 60%); }
+
+/* Gallery header: the "Be an enemy to the oppressor" banner across the top, title underneath */
+.page-hero.page-hero--gallery {
+  background-color: #2a0a0c;
+  background-image: linear-gradient(180deg, rgba(42,10,12,0) 0%, rgba(42,10,12,0) 62%, #2a0a0c 100%), url("../img/gallery/banner-enemy-oppressor.jpeg");
+  background-size: 100% 20.4vw, 100% auto; background-position: center top, center top;
+  padding-top: calc(20.4vw + .6rem); padding-bottom: 2.4rem;
+}
+@media (max-width: 760px) {
+  .page-hero.page-hero--gallery { background-size: 100% 35vw, 160% auto; background-position: center top, 47% top; padding-top: calc(35vw + .4rem); padding-bottom: 1.8rem; }
+}
