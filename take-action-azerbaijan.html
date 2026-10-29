@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Take Action: Azerbaijan | ABSoc for Justice</title>
+  <meta name="description" content="Take action against the hijab ban on Azerbaijan's schoolgirls and teachers: email Muslim governments and urge them to press Azerbaijan to lift it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>document.documentElement.className+=" js";</script>
+  <link rel="stylesheet" href="assets/css/style.css?v=20261029k">
+  <link rel="icon" href="assets/img/afj-logo.jpeg">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><img src="assets/img/afj-logo.jpeg" alt="ABSoc for Justice logo" class="brand-logo"></a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="work.html">Our Work</a></li>
+        <li><a href="campaigns.html">Campaigns</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="reading-list.html">Reading List</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="statements.html">Statements</a></li>
+        <li><a href="get-involved.html">Get Involved</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta"><a class="btn btn-primary" href="get-involved.html#donate">Donate</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="page-hero page-hero--action">
+    <div class="container">
+      <p class="breadcrumb"><a href="index.html">Home</a> / <a href="campaigns.html#azerbaijan">Campaigns</a> / Take action</p>
+      <p class="action-kicker">Take action &middot; Azerbaijan</p>
+      <h1>Lift the hijab ban on Azerbaijan&rsquo;s schoolgirls</h1>
+      <p>Write to Muslim governments and urge them to press Azerbaijan to let our sisters back into school. It takes one minute.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#send">Send the letter</a>
+        <a class="btn btn-ghost" href="#background">Read the background</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUMMARY + FORM -->
+  <section id="send" class="action-wrap">
+    <div class="container action-grid">
+
+      <div class="action-intro reveal">
+        <p class="eyebrow">Summary</p>
+        <h2>One email. One minute.</h2>
+        <p class="lead">The Azerbaijani regime, ruling over a population that is 97% Muslim, has imposed a brutal hijab ban on schoolgirls and teachers &mdash; denying Muslim girls their fundamental right to education.</p>
+        <p>Iraq now holds the presidency of the Organisation of Islamic Cooperation&rsquo;s Council of Foreign Ministers. Write to Iraq&rsquo;s Prime Minister, Ali al-Zaidi, and to the foreign ministers of Muslim-majority countries, and ask them to use their influence to have the ban lifted.</p>
+        <ol class="action-steps">
+          <li><span>1</span><div>Add your name.</div></li>
+          <li><span>2</span><div>Check the letter &mdash; you can edit it.</div></li>
+          <li><span>3</span><div>Press <strong>Send my email</strong>. Your email opens with everything filled in &mdash; just hit send.</div></li>
+        </ol>
+      </div>
+
+      <form class="action-form reveal" id="action-form" novalidate>
+        <fieldset class="af-who">
+          <legend>Who are you writing to?</legend>
+          <label class="af-choice">
+            <input type="radio" name="target" value="pm" checked>
+            <span><b>Prime Minister of Iraq</b>Ali al-Zaidi &mdash; Iraq holds the OIC Council of Foreign Ministers presidency</span>
+          </label>
+          <label class="af-choice">
+            <input type="radio" name="target" value="fm">
+            <span><b>A foreign minister</b>Of any Muslim-majority country &mdash; add their name and email</span>
+          </label>
+        </fieldset>
+
+        <div class="af-fm" hidden>
+          <label><span class="lbl">Foreign minister&rsquo;s name</span><input type="text" id="fm-name" placeholder="e.g. Foreign Minister of Malaysia" autocomplete="off"></label>
+          <label><span class="lbl">Their email address <small>(optional &mdash; you can add it in your email app)</small></span><input type="email" id="fm-email" placeholder="minister@example.gov" autocomplete="off"></label>
+        </div>
+
+        <div class="af-row">
+          <label><span class="lbl">Your name <em>*</em></span><input type="text" id="your-name" placeholder="Your full name" autocomplete="name" required></label>
+          <label><span class="lbl">Town and country</span><input type="text" id="your-town" placeholder="e.g. London, UK" autocomplete="address-level2"></label>
+        </div>
+
+        <label class="af-letter-label"><span class="lbl">Your letter <small>(edit it if you like)</small></span>
+          <input type="text" id="letter-subject" class="af-subject" aria-label="Email subject">
+          <textarea id="letter-body" rows="16"></textarea>
+        </label>
+        <p class="af-to">To: <span id="to-line"></span></p>
+
+        <p class="af-error" id="af-error" role="alert" hidden></p>
+        <div class="af-buttons">
+          <button type="submit" class="btn btn-primary af-send">Send my email</button>
+          <a class="btn btn-outline" id="send-gmail" href="#" target="_blank" rel="noopener">Send with Gmail</a>
+          <button type="button" class="btn btn-outline" id="copy-letter">Copy letter</button>
+        </div>
+        <p class="af-note">&ldquo;Send my email&rdquo; opens the email app on your phone or computer. If nothing opens, use &ldquo;Send with Gmail&rdquo;, or copy the letter and paste it into any email.</p>
+
+        <div class="af-thanks" id="af-thanks" hidden>
+          <h3>Thank you</h3>
+          <p>Once you&rsquo;ve pressed send in your email app, your letter is on its way. Now multiply it: send this page to five friends, and write to a foreign minister too.</p>
+          <div class="af-buttons">
+            <button type="button" class="btn btn-primary" id="share-page">Share this page</button>
+            <button type="button" class="btn btn-outline" id="write-another">Write to a foreign minister</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- BACKGROUND -->
+  <section id="background" class="bg-cream-2">
+    <div class="container action-bg">
+      <div class="action-photo reveal">
+        <img src="assets/img/gallery/azerbaijan-hijab-protest.jpeg" alt="Schoolgirls in Azerbaijan holding a sign reading 'Hicab təhsilə əngəl deyil!!' — 'The hijab is no obstacle to education!'" loading="lazy">
+      </div>
+      <div class="reveal">
+        <p class="eyebrow">Background</p>
+        <h2>Turned away at the school gates</h2>
+        <p>Since 12 October 2026, Azerbaijan has been enforcing its headscarf ban in schools by refusing entry to every pupil and teacher who wears the hijab. Videos of girls in tears as they are sent home, and of teachers barred from their own classrooms, have spread across the world. It is the same &lsquo;secularism&rsquo; excuse Tajikistan used when it outlawed the headscarf.</p>
+        <p>This is not a ban on a piece of cloth. It is a ban on the Muslim women who wear it &mdash; the product of a sustained campaign of Islamophobia that aims to make practising Muslims second-class citizens in their own country.</p>
+        <p>Azerbaijanis have refused to accept it. Students have walked out, classrooms have emptied as classmates stand with those shut out, and families have protested at the school gates. The regime has answered with a crackdown: its own Interior Ministry says 37 people were detained in Baku on 12 October alone, and activists report more than 200 detentions nationwide. Discrimination on this scale harms everyone in society.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MORE ACTIONS -->
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Action required</p>
+        <h2>Three ways to act</h2>
+      </div>
+      <div class="grid grid-3 reveal">
+        <a class="card action-card" href="#send">
+          <div class="icon icon--num">I</div>
+          <h3>Email Iraq&rsquo;s Prime Minister</h3>
+          <p>Iraq now presides over the OIC Council of Foreign Ministers. Ask Prime Minister Ali al-Zaidi to use that position to demand the ban is reversed.</p>
+        </a>
+        <a class="card action-card" href="#send" data-pick="fm">
+          <div class="icon icon--num">II</div>
+          <h3>Write to foreign ministers</h3>
+          <p>Write to the foreign ministers of Muslim-majority countries and demand they take a strong public stand against the ban.</p>
+        </a>
+        <a class="card action-card" href="https://instagram.com/absocforjustice" target="_blank" rel="noopener">
+          <div class="icon icon--num">III</div>
+          <h3>Follow &amp; share</h3>
+          <p>Follow @absocforjustice for updates and protests, and share this page so others can send their letters too.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LETTERS + ADDRESSES -->
+  <section class="bg-cream-2">
+    <div class="container" style="max-width:860px">
+      <div class="section-head reveal">
+        <p class="eyebrow">Prefer to post a letter?</p>
+        <h2>Template letters &amp; addresses</h2>
+      </div>
+      <details class="action-letter reveal">
+        <summary>Letter to the Prime Minister of Iraq</summary>
+        <div class="letter-paper" id="paper-pm"></div>
+      </details>
+      <details class="action-letter reveal">
+        <summary>Letter to a foreign minister</summary>
+        <div class="letter-paper" id="paper-fm"></div>
+      </details>
+      <div class="action-address reveal">
+        <h3>Prime Minister of Iraq</h3>
+        <address>Prime Minister Ali al-Zaidi<br>Republican Palace<br>Baghdad 10011<br>Iraq</address>
+        <p>Email: <a href="mailto:pmo.ca@pmo.gov.iq">pmo.ca@pmo.gov.iq</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="camp-sources">
+    <div class="container">
+      <details>
+        <summary>Sources for the facts on this page</summary>
+        <ul>
+          <li><a href="https://www.amnesty.org/en/latest/news/2026/10/azerbaijan-stop-denying-access-to-education-through-discriminatory-hijab-restrictions-and-release-peaceful-protesters/" target="_blank" rel="noopener">Azerbaijan: stop denying access to education through hijab restrictions, 16 October 2026 (Amnesty International)</a></li>
+          <li><a href="https://www.aljazeera.com/news/2026/10/12/azerbaijans-school-hijab-ban-whats-behind-it-and-whats-next" target="_blank" rel="noopener">Azerbaijan&rsquo;s school hijab ban: what&rsquo;s behind it, 12 October 2026 (Al Jazeera)</a></li>
+          <li><a href="https://shafaq.com/en/Iraq/Baghdad-opens-52nd-OIC-foreign-ministers-meeting" target="_blank" rel="noopener">Baghdad opens 52nd OIC foreign ministers&rsquo; meeting; Iraq takes over the Council&rsquo;s presidency, 17 October 2026 (Shafaq News)</a></li>
+          <li><a href="https://www.aljazeera.com/news/2026/5/14/iraqs-parliament-approves-new-ali-al-zaidi-government" target="_blank" rel="noopener">Iraq&rsquo;s parliament approves new Ali al-Zaidi government, 14 May 2026 (Al Jazeera)</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Islam_in_Azerbaijan" target="_blank" rel="noopener">Islam in Azerbaijan &mdash; population figures (Wikipedia, citing the CIA World Factbook)</a></li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/img/afj-logo.jpeg" alt="ABSoc for Justice" class="footer-logo">
+          <p>God-centric, lawful activism and advocacy. A student-led initiative mobilising and campaigning for justice through education and empowerment.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <a href="about.html">About Us</a>
+          <a href="work.html">Our Work</a>
+          <a href="campaigns.html">Campaigns</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="reading-list.html">Reading List</a>
+          <a href="articles.html">Articles</a>
+          <a href="statements.html">Statements</a>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <a href="get-involved.html">Get Involved</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0EBjDu80iWDxrytZ04lSYgDLr2LV-geMuVpJ3-7W1e_8nQQ/viewform" target="_blank" rel="noopener">Become a member</a>
+          <a href="get-involved.html#donate">Donate</a>
+          <a href="mailto:Info.absocforjustice@gmail.com">Info.absocforjustice@gmail.com</a>
+          <a href="https://instagram.com/absocforjustice" target="_blank" rel="noopener">@absocforjustice</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> ABSoc for Justice (AFJ). All rights reserved.</span>
+        <span>Inspired by the example of Imam Hussain.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js?v=20261029k"></script>
+  <script src="assets/js/take-action.js?v=20261029k"></script>
+</body>
+</html>

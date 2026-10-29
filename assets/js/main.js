@@ -18,6 +18,7 @@
 
   /* ---- Active nav link based on filename ---- */
   var path = location.pathname.split("/").pop() || "index.html";
+  if (path.indexOf("take-action") === 0) path = "campaigns.html";
   document.querySelectorAll(".nav-links a").forEach(function (a) {
     var href = a.getAttribute("href");
     if (href === path || (path === "" && href === "index.html")) {
