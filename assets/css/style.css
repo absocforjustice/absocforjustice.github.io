@@ -1029,7 +1029,7 @@ form.afj-form { display: grid; gap: 1rem; }
 .camp-hero-ar {
   font-family: "Amiri", "Scheherazade New", "Traditional Arabic", serif; font-weight: 700;
   color: var(--gold) !important; font-size: clamp(1.4rem, 2.8vw, 1.9rem) !important; line-height: 1.6;
-  margin: .4rem 0 .2rem; text-align: left;
+  margin: 1.1rem 0 .5rem; text-align: left;
 }
 
 /* Britain campaign: National / Students parts */
