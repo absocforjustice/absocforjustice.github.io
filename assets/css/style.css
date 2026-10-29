@@ -105,7 +105,7 @@ p { margin: 0 0 1.1em; }
   display: flex; align-items: center; justify-content: space-between;
   height: 74px;
 }
-.brand { display: flex; align-items: center; gap: .7rem; color: #fff; }
+.brand { display: flex; align-items: center; gap: .7rem; color: #fff; flex-shrink: 0; margin-right: 1rem; }
 .brand:hover { color: #fff; }
 .brand-logo { height: 54px; width: auto; border-radius: 8px; display: block; }
 @media (max-width: 520px) { .brand-logo { height: 46px; } }
@@ -121,10 +121,10 @@ p { margin: 0 0 1.1em; }
 .brand-text b { font-family: var(--font-head); font-size: 1.15rem; letter-spacing: .5px; }
 .brand-text span { font-size: .62rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); }
 
-.nav-links { display: flex; align-items: center; gap: .3rem; list-style: none; margin: 0; padding: 0; }
+.nav-links { display: flex; align-items: center; gap: .1rem; list-style: none; margin: 0; padding: 0; }
 .nav-links a {
   color: #e9e3d4; font-size: .86rem; font-weight: 500;
-  padding: .5rem .62rem; border-radius: 8px; white-space: nowrap;
+  padding: .5rem .55rem; border-radius: 8px; white-space: nowrap;
 }
 .nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(200,162,74,.18); }
 .nav-cta { margin-left: .5rem; }
@@ -135,7 +135,7 @@ p { margin: 0 0 1.1em; }
 }
 .nav-toggle span { display: block; width: 24px; height: 2px; background: #fff; margin: 5px auto; transition: .3s; }
 
-@media (max-width: 1040px) {
+@media (max-width: 1180px) {
   .nav-toggle { display: block; }
   .nav-links {
     position: absolute; top: 74px; left: 0; right: 0;
@@ -147,7 +147,7 @@ p { margin: 0 0 1.1em; }
     transition: max-height .3s ease, padding .3s ease;
   }
   .nav-links.open {
-    max-height: 520px;
+    max-height: 860px;
     padding: .5rem 22px 1.2rem;
     border-bottom: 1px solid rgba(200,162,74,.25);
   }
@@ -1105,7 +1105,7 @@ form.afj-form { display: grid; gap: 1rem; }
 .af-count::before { content: "\2709\FE0E  "; color: var(--gold, #c8a24a); }
 
 /* ---------- Shop: coming soon ---------- */
-.page-hero--shop { background-image: linear-gradient(105deg, rgba(35,8,9,.88) 22%, rgba(45,11,12,.6) 100%), url("../img/gallery/msc-conference-stall.jpeg"); background-position: center 40%; }
+.page-hero--shop { background-image: linear-gradient(105deg, rgba(35,8,9,.9) 25%, rgba(45,11,12,.35) 100%), url("../img/shop-tote-black.jpeg"); background-position: 70% center; }
 .soon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
 @media (max-width: 780px) { .soon-grid { grid-template-columns: 1fr 1fr; } .soon-tile:last-child { grid-column: 1 / -1; aspect-ratio: 2 / 1; } }
 @media (max-width: 480px) { .soon-grid { grid-template-columns: 1fr; } .soon-tile:last-child { aspect-ratio: 1 / 1; } }
@@ -1123,3 +1123,53 @@ form.afj-form { display: grid; gap: 1rem; }
 .soon-label { font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: rgba(243,231,207,.85); }
 .afj-waitlist .af-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 @media (max-width: 560px) { .afj-waitlist .af-row { grid-template-columns: 1fr; } }
+
+/* ---------- Events ---------- */
+.page-hero--events { background-image: linear-gradient(105deg, rgba(35,8,9,.88) 22%, rgba(45,11,12,.6) 100%), url("../img/gallery/hall-packed-audience.jpeg"); background-position: center 40%; }
+.ev-list { display: grid; gap: 1rem; }
+.ev {
+  display: grid; grid-template-columns: 112px 1fr; gap: 1.4rem; align-items: start;
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1.3rem; box-shadow: var(--shadow);
+}
+.ev-date {
+  display: grid; place-items: center; align-content: center; text-align: center;
+  aspect-ratio: 1 / 1; border-radius: 12px; color: #f3e7cf;
+  background: radial-gradient(circle at 70% 20%, rgba(200,162,74,.25), rgba(200,162,74,0) 60%), linear-gradient(160deg, var(--green-700), var(--green-900));
+}
+.ev-day { font-family: var(--font-head); font-weight: 700; font-size: 2.6rem; line-height: 1; color: #c8a24a; }
+.ev-mon { font-size: .74rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-top: .3rem; }
+.ev-body h3 { margin: .1rem 0 .3rem; font-size: 1.3rem; }
+.ev-meta { margin: 0 0 .6rem; font-weight: 600; color: var(--green-700); font-size: .92rem; }
+.ev-body p { margin: 0 0 .8rem; }
+.ev-actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+.ev-actions .btn { padding: .55rem 1.1rem; font-size: .88rem; }
+.ev--past { opacity: .82; }
+.ev--past .ev-date { filter: grayscale(.4); }
+.ev-empty { text-align: center; padding: 2.4rem 1.4rem; background: var(--paper); border: 1px dashed var(--line); border-radius: var(--radius); }
+.ev-empty h3 { margin: 0 0 .4rem; }
+.ev-empty p { margin: 0; color: var(--muted); }
+.ev-more { margin: 1.4rem 0 0; }
+@media (max-width: 560px) {
+  .ev { grid-template-columns: 76px 1fr; gap: 1rem; padding: 1rem; }
+  .ev-day { font-size: 1.9rem; }
+  .ev-mon { font-size: .62rem; letter-spacing: .08em; }
+}
+.ev--poster { grid-template-columns: 112px 1fr 220px; }
+.ev-poster { display: block; border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); }
+.ev-poster img { display: block; width: 100%; height: auto; }
+.ev-speakers { font-size: .92rem; }
+.ev-topics { margin: 0 0 1rem; padding-left: 1.1rem; font-size: .92rem; color: var(--muted); }
+.ev-topics li { margin: .15rem 0; }
+@media (max-width: 860px) {
+  .ev--poster { grid-template-columns: 96px 1fr; }
+  .ev--poster .ev-poster { grid-column: 1 / -1; max-width: 360px; }
+}
+@media (max-width: 560px) { .ev--poster { grid-template-columns: 76px 1fr; } }
+
+.soon-tile--photo { margin: 0; background-size: cover; background-position: center; align-content: end; justify-items: start; text-align: left; padding: 1.2rem; }
+.soon-tile--photo::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(20,4,5,0) 45%, rgba(20,4,5,.85)); }
+.soon-tile--photo::before { z-index: 0; }
+.soon-tile--photo figcaption { position: relative; z-index: 1; color: #f3e7cf; font-size: .92rem; line-height: 1.35; }
+.soon-tile--photo figcaption b { display: block; font-family: var(--font-head); font-size: 1.35rem; color: #fff; }
+@media (max-width: 1180px) { .nav-links a { display: block; } }
