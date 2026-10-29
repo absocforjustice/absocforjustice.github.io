@@ -21,7 +21,7 @@ The repository root *is* the website — what you see here is exactly what gets 
 | `work.html` | Our Work — the five pillars |
 | `gallery.html` | Photo gallery |
 | `reading-list.html` | Reading List — 35 books across 5 themes |
-| `articles.html` | Articles / think pieces |
+| `articles.html` | Articles |
 | `statements.html` | Statements |
 | `get-involved.html` | Get Involved |
 | `contact.html` | Contact |
