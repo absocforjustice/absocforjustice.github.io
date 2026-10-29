@@ -683,7 +683,7 @@ form.afj-form { display: grid; gap: 1rem; }
    stylesheet, not the page - which silently 404'd and left a plain maroon band. */
 .page-hero {
   position: relative;
-  background-image: linear-gradient(105deg, rgba(35,8,9,.86) 22%, rgba(45,11,12,.60) 100%), url("../img/gallery/event-panel-scholars.jpeg");
+  background-image: linear-gradient(105deg, rgba(35,8,9,.86) 22%, rgba(45,11,12,.60) 100%), url("../img/gallery/hall-packed-audience.jpeg");
   background-position: center 45%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -692,13 +692,13 @@ form.afj-form { display: grid; gap: 1rem; }
   border-bottom: 3px solid var(--gold);
 }
 .page-hero--about { background-image: linear-gradient(105deg, rgba(35,8,9,.86) 22%, rgba(45,11,12,.60) 100%), url("../img/gallery/fatema-zainab-panel.jpeg"); }
-.page-hero--work { background-image: linear-gradient(105deg, rgba(35,8,9,.86) 22%, rgba(45,11,12,.60) 100%), url("../img/gallery/event-panel-scholars.jpeg"); }
+.page-hero--work { background-image: linear-gradient(105deg, rgba(35,8,9,.86) 22%, rgba(45,11,12,.60) 100%), url("../img/gallery/event-panel-keffiyeh.jpeg"); }
 .page-hero--gallery { background-image: linear-gradient(105deg, rgba(35,8,9,.86) 22%, rgba(45,11,12,.60) 100%), url("../img/gallery/event-palestine-house.jpeg"); }
 .page-hero--reading { background-image: linear-gradient(105deg, rgba(35,8,9,.86) 22%, rgba(45,11,12,.60) 100%), url("../img/gallery/hall-packed-audience.jpeg"); }
 .page-hero--statements { background-image: linear-gradient(105deg, rgba(35,8,9,.86) 22%, rgba(45,11,12,.60) 100%), url("../img/gallery/placard-zaynab.jpeg"); }
 .page-hero--involved { background-image: linear-gradient(105deg, rgba(35,8,9,.86) 22%, rgba(45,11,12,.60) 100%), url("../img/gallery/event-who-is-hussain.jpeg"); }
 .page-hero--articles { background-image: linear-gradient(105deg, rgba(35,8,9,.86) 22%, rgba(45,11,12,.60) 100%), url("../img/gallery/event-panel-keffiyeh.jpeg"); }
-.page-hero--contact { background-image: linear-gradient(105deg, rgba(35,8,9,.86) 22%, rgba(45,11,12,.60) 100%), url("../img/gallery/event-speaker-mic.jpeg"); }
+.page-hero--contact { background-image: linear-gradient(105deg, rgba(35,8,9,.86) 22%, rgba(45,11,12,.60) 100%), url("../img/gallery/msc-conference-stall.jpeg"); }
 .page-hero h1 { color:#fff; margin-bottom:.3rem; text-shadow: 0 2px 14px rgba(20,4,5,.55); }
 .page-hero p { color:#dfe7d6; max-width: 640px; font-size: 1.1rem; }
 .breadcrumb { font-size:.82rem; color: var(--gold); letter-spacing:.05em; margin-bottom:1rem; }
