@@ -568,7 +568,7 @@ form.afj-form { display: grid; gap: 1rem; }
   padding: clamp(4.5rem, 11vw, 8rem) 0;
   background:
     linear-gradient(270deg, rgba(25,5,6,.04) 0, rgba(25,5,6,.26) 240px, rgba(25,5,6,.97) 470px),
-    url("../img/gallery/speaker-quote-banner.jpeg") right 0 center/auto 118% no-repeat,
+    url("../img/gallery/speaker-quote-banner.jpeg?v=2") right 0 center/auto 118% no-repeat,
     #1c0506;
   text-align: left;
   border-top: 6px solid var(--gold); border-bottom: 6px solid var(--gold);
@@ -620,7 +620,7 @@ form.afj-form { display: grid; gap: 1rem; }
     min-height: 880px; align-items: flex-start; text-align: center;
     background:
       linear-gradient(180deg, rgba(25,5,6,.97) 0%, rgba(25,5,6,.93) 33%, rgba(25,5,6,.30) 52%, rgba(25,5,6,.08) 100%),
-      url("../img/gallery/speaker-quote-banner.jpeg") center bottom/max(100%, 600px) auto no-repeat,
+      url("../img/gallery/speaker-quote-banner.jpeg?v=2") center bottom/max(100%, 600px) auto no-repeat,
       #1c0506;
   }
   .banner-quote--hero .bq-label { justify-content: center; }
