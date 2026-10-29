@@ -663,6 +663,11 @@ form.afj-form { display: grid; gap: 1rem; }
   padding: .85rem 0;
 }
 .ticker .tk-sep { padding: .85rem 1.4rem; opacity: .7; font-size: .8em; }
+.ticker .tk-ar {
+  font-family: "Amiri", "Scheherazade New", "Traditional Arabic", serif;
+  text-transform: none; letter-spacing: 0; font-weight: 700;
+  font-size: clamp(1.25rem, 2.2vw, 1.55rem); padding: .55rem 0;
+}
 @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) {
   .ticker-track { animation: none; }
