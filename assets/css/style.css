@@ -1087,3 +1087,11 @@ form.afj-form { display: grid; gap: 1rem; }
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background: radial-gradient(ellipse 60% 38% at 18% 10%, rgba(30,6,8,.72), rgba(30,6,8,0) 70%);
 }
+
+/* Home campaigns grid: stretch a lone last card across the row */
+.hc-grid .hc-card:last-child:nth-child(3n+1) { grid-column: 1 / -1; }
+@media (max-width: 900px) {
+  .hc-grid .hc-card:last-child:nth-child(3n+1) { grid-column: auto; }
+  .hc-grid .hc-card:last-child:nth-child(2n+1) { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) { .hc-grid .hc-card:last-child { grid-column: auto; } }
