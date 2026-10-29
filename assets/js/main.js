@@ -42,7 +42,7 @@
     reveal.forEach(function (el) { el.classList.add("in"); });
   }
 
-  /* ---- Contact form: sends to Info.absocforjustice@gmail.com via FormSubmit ---- */
+  /* ---- Contact form: sends to info.absocforjustice@gmail.com via Web3Forms ---- */
   var form = document.querySelector(".afj-form");
   if (form) {
     form.addEventListener("submit", function (e) {
@@ -52,8 +52,10 @@
       if (!form.checkValidity()) { form.reportValidity(); return; }
       var data = {};
       new FormData(form).forEach(function (v, k) { data[k] = v; });
-      if (data._honey) return;                                   // spam bot
-      if (data.subject) data._subject = "AFJ website: " + data.subject;
+      if (form.querySelector('[name="botcheck"]').checked) return;   // spam bot
+      delete data.botcheck;
+      data.topic = data.subject || "(none)";
+      data.subject = "AFJ website: " + (data.subject || "new message");
       btn.disabled = true; btn.textContent = "Sending…";
       function show(msg, ok) {
         status.textContent = msg; status.style.display = "block";
@@ -63,7 +65,7 @@
       // If the automatic send fails, hand the message to the visitor's own email so it still reaches us.
       function fallback(why) {
         if (why && window.console) console.warn("Contact form:", why);
-        var subj = data._subject || "Message from the AFJ website";
+        var subj = data.subject;
         var body = data.message + "\n\n— " + data.name + " (" + data.email + ")";
         var mailto = "mailto:" + TO + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body);
         var gmail = "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(TO) +
@@ -77,13 +79,13 @@
         row.appendChild(a1); row.appendChild(a2); status.appendChild(p); status.appendChild(row);
         status.style.display = "block"; status.style.borderColor = "";
       }
-      fetch("https://formsubmit.co/ajax/" + TO, {
+      fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify(data)
       }).then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
         .then(function (res) {
-          if (res.ok && String(res.j.success) === "true") {
+          if (res.ok && res.j && res.j.success === true) {
             show("Thank you — your message has been sent. We’ll get back to you soon, in shaa Allah.", true);
             form.reset();
           } else {
