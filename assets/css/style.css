@@ -948,53 +948,20 @@ form.afj-form { display: grid; gap: 1rem; }
 }
 
 /* ---------- Imam Hussain quote (foot of Campaigns) ---------- */
-.hussain-quote {
-  padding: clamp(3.5rem, 8vw, 6rem) 0;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(200,162,74,.10), rgba(200,162,74,0) 65%),
-    var(--cream);
-}
-.hussain-quote .container { max-width: 940px; }
-.hq-frame {
-  position: relative; text-align: center; margin: 0;
-  padding: clamp(2.6rem, 6vw, 4.2rem) clamp(1.4rem, 5vw, 4rem);
-  background: #fffaf1;
-  border: 1px solid rgba(169,134,58,.55);
-  outline: 1px solid rgba(169,134,58,.35); outline-offset: -12px;
-  box-shadow: 0 18px 50px -24px rgba(63,17,19,.35);
-}
-.hq-frame .hq-corner {
-  position: absolute; width: 34px; height: 34px; color: var(--gold-dark);
-}
-.hq-frame .hq-corner svg { width: 100%; height: 100%; display: block; }
-.hq-corner.tl { top: 18px; left: 18px; }
-.hq-corner.tr { top: 18px; right: 18px; transform: scaleX(-1); }
-.hq-corner.bl { bottom: 18px; left: 18px; transform: scaleY(-1); }
-.hq-corner.br { bottom: 18px; right: 18px; transform: scale(-1, -1); }
-.hq-label {
-  display: inline-block; margin: 0 0 1.6rem;
-  font-family: var(--font-body); font-weight: 700; font-size: .78rem;
-  letter-spacing: .3em; text-transform: uppercase; color: var(--gold-dark);
-}
-.hq-star { display: block; color: var(--gold); font-size: 1.3rem; margin: 0 0 1.2rem; }
+.hussain-quote { padding: clamp(2.2rem, 5vw, 3.2rem) 0; background: var(--cream); text-align: center; }
+.hussain-quote .container { max-width: 680px; }
+.hq-star { display: block; color: var(--gold); font-size: .95rem; margin: 0 0 .7rem; }
 .hussain-quote blockquote { margin: 0; }
 .hq-ar {
   font-family: "Amiri", "Scheherazade New", "Traditional Arabic", serif; font-weight: 700;
-  font-size: clamp(1.8rem, 4.4vw, 3rem); line-height: 1.9; color: var(--green-800); margin: 0 0 1.4rem;
+  font-size: clamp(1.25rem, 2.6vw, 1.6rem); line-height: 1.8; color: var(--green-800); margin: 0 0 .5rem;
 }
-.hq-rule { display: flex; align-items: center; justify-content: center; gap: .8rem; margin: 0 auto 1.4rem; color: var(--gold); }
-.hq-rule::before, .hq-rule::after { content: ""; height: 1px; width: clamp(3rem, 12vw, 7rem); background: rgba(169,134,58,.6); }
 .hq-en {
   font-family: Georgia, "Times New Roman", serif; font-style: italic;
-  font-size: clamp(1.2rem, 2.6vw, 1.65rem); line-height: 1.55; color: var(--ink);
-  max-width: 700px; margin: 0 auto;
+  font-size: clamp(1rem, 1.8vw, 1.1rem); line-height: 1.55; color: var(--ink); margin: 0 auto;
 }
 .hq-cite {
-  display: block; margin-top: 1rem; font-style: normal; font-family: var(--font-body);
-  font-weight: 700; font-size: .85rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-dark);
+  display: block; margin-top: .6rem; font-weight: 700; font-size: .75rem;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--gold-dark);
 }
-.hq-close {
-  margin: 2.2rem auto 0; max-width: 560px;
-  font-family: var(--font-head); text-transform: uppercase; letter-spacing: .04em;
-  font-size: clamp(1rem, 2.2vw, 1.25rem); line-height: 1.4; color: var(--green-800);
-}
+.hq-close { margin: 1rem auto 0; font-size: .92rem; color: var(--muted); }
