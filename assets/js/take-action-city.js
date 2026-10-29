@@ -47,11 +47,21 @@
     gmail.href = "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(TO) +
       "&su=" + encodeURIComponent(subjEl.value) + "&body=" + encodeURIComponent(bodyEl.value);
   }
-  function valid() {
-    if (!nameEl.value.trim()) { err.textContent = "Please add your name so the letter can be signed."; err.hidden = false; nameEl.focus(); return false; }
+  var AUTO = window.AFJ_SEND && AFJ_SEND.enabled();
+  var emailEl = $("c-email"), sendBtn = form.querySelector(".af-send");
+  function fail(msg, el) { err.textContent = msg; err.hidden = false; if (el) el.focus(); return false; }
+  function valid(needEmail) {
+    if (!nameEl.value.trim()) return fail("Please add your name so the letter can be signed.", nameEl);
+    if (needEmail && !AFJ_SEND.validEmail(emailEl.value.trim())) return fail("Please add your email address so your letter can be sent.", emailEl);
     err.hidden = true; return true;
   }
-  function thanks() { var t = $("c-thanks"); t.hidden = false; t.scrollIntoView({ behavior: "smooth", block: "nearest" }); }
+  function openMail() {
+    window.location.href = "mailto:" + TO + "?subject=" + encodeURIComponent(subjEl.value) + "&body=" + encodeURIComponent(bodyEl.value);
+  }
+  function thanks(msg) {
+    var t = $("c-thanks"); if (msg) $("c-thanks-msg").textContent = msg;
+    t.hidden = false; t.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
 
   [nameEl, courseEl].forEach(function (el) {
     el.addEventListener("input", function () {
@@ -70,10 +80,27 @@
   form.querySelectorAll('input[name="who"]').forEach(function (r) { r.addEventListener("change", function () { edited = false; refresh(true); }); });
 
   form.addEventListener("submit", function (e) {
-    e.preventDefault(); if (!valid()) return;
-    window.location.href = "mailto:" + TO + "?subject=" + encodeURIComponent(subjEl.value) + "&body=" + encodeURIComponent(bodyEl.value);
-    setTimeout(thanks, 600);
+    e.preventDefault();
+    if (!AUTO) { if (!valid()) return; openMail(); setTimeout(thanks, 600); return; }
+    if (!valid(true)) return;
+    sendBtn.disabled = true; sendBtn.textContent = "Sending…";
+    AFJ_SEND.send("city-divest", {
+      name: nameEl.value.trim(), email: emailEl.value.trim(), subject: subjEl.value, body: bodyEl.value,
+      website: form.querySelector('[name="website"]').value
+    }).then(function (res) {
+      sendBtn.disabled = false; sendBtn.textContent = "Send my email";
+      if (res.ok) {
+        if (res.count) AFJ_SEND.show($("c-count"), res.count);
+        thanks("Your letter has been sent to City St George\u2019s. Thank you! Now multiply it: send this page to five friends.");
+      } else if (AFJ_SEND.MESSAGES[res.error]) {
+        fail(AFJ_SEND.MESSAGES[res.error], res.error === "email" ? emailEl : null);
+      } else {
+        fail("We couldn\u2019t send it automatically just now, so your email app is opening with the letter ready \u2014 just tap send.");
+        openMail(); setTimeout(thanks, 600);
+      }
+    });
   });
+  if (AUTO) AFJ_SEND.count("city-divest", $("c-count"));
   gmail.addEventListener("click", function (e) { if (!valid()) { e.preventDefault(); return; } setTimeout(thanks, 600); });
   $("c-copy").addEventListener("click", function () {
     if (!valid()) return;

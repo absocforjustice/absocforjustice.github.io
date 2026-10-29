@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script>document.documentElement.className+=" js";</script>
-  <link rel="stylesheet" href="assets/css/style.css?v=20261030t">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261030u">
   <link rel="icon" href="assets/img/afj-logo.jpeg">
 </head>
 <body>
@@ -58,9 +58,9 @@
         <p class="lead">The Azerbaijani regime, ruling over a population that is 97% Muslim, has imposed a brutal hijab ban on schoolgirls and teachers &mdash; denying Muslim girls their fundamental right to education.</p>
         <p>Iraq now holds the presidency of the Organisation of Islamic Cooperation&rsquo;s Council of Foreign Ministers. Write to Iraq&rsquo;s Prime Minister, Ali al-Zaidi, and to the foreign ministers of Muslim-majority countries, and ask them to use their influence to have the ban lifted.</p>
         <ol class="action-steps">
-          <li><span>1</span><div>Add your name.</div></li>
+          <li><span>1</span><div>Add your name<span class="auto-only"> and email</span>.</div></li>
           <li><span>2</span><div>Check the letter &mdash; you can edit it.</div></li>
-          <li><span>3</span><div>Press <strong>Send my email</strong>. Your email opens with everything filled in &mdash; just tap send.</div></li>
+          <li><span>3</span><div>Press <strong>Send my email</strong>.<span class="auto-only"> Your letter is sent straight to the Prime Minister&rsquo;s office &mdash; that&rsquo;s it.</span><span class="manual-only"> Your email opens with everything filled in &mdash; just tap send.</span></div></li>
         </ol>
       </div>
 
@@ -84,6 +84,7 @@
 
         <div class="af-row">
           <label><span class="lbl">Your name <em>*</em></span><input type="text" id="your-name" placeholder="Your full name" autocomplete="name" required></label>
+          <label class="auto-only"><span class="lbl">Your email <em>*</em></span><input type="email" id="your-email" placeholder="you@example.com" autocomplete="email"></label>
           <label><span class="lbl">Town and country</span><input type="text" id="your-town" placeholder="e.g. London, UK" autocomplete="address-level2"></label>
         </div>
 
@@ -93,17 +94,20 @@
         </label>
         <p class="af-to">To: <span id="to-line"></span></p>
 
+        <p class="af-count" id="af-count" hidden></p>
         <p class="af-error" id="af-error" role="alert" hidden></p>
+        <input type="text" name="website" class="af-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="af-buttons">
           <button type="submit" class="btn btn-primary af-send">Send my email</button>
           <a class="btn btn-outline" id="send-gmail" href="#" target="_blank" rel="noopener">Send with Gmail</a>
           <button type="button" class="btn btn-outline" id="copy-letter">Copy letter</button>
         </div>
-        <p class="af-note">&ldquo;Send my email&rdquo; opens the email app on your phone or computer. If nothing opens, use &ldquo;Send with Gmail&rdquo;, or copy the letter and paste it into any email.</p>
+        <p class="af-note auto-only">Your letter goes straight to the Prime Minister of Iraq&rsquo;s office, sent by ABSoc for Justice and signed with your name. Your email is added as the reply address, so they can answer you directly. Prefer to send it yourself? Use &ldquo;Send with Gmail&rdquo; or copy the letter.</p>
+        <p class="af-note manual-only">&ldquo;Send my email&rdquo; opens the email app on your phone or computer. If nothing opens, use &ldquo;Send with Gmail&rdquo;, or copy the letter and paste it into any email.</p>
 
         <div class="af-thanks" id="af-thanks" hidden>
           <h3>Thank you</h3>
-          <p>Once you&rsquo;ve tapped send in your email app, your letter is on its way. Now multiply it: send this page to five friends, and write to a foreign minister too.</p>
+          <p id="af-thanks-msg">Once you&rsquo;ve tapped send in your email app, your letter is on its way. Now multiply it: send this page to five friends, and write to a foreign minister too.</p>
           <div class="af-buttons">
             <button type="button" class="btn btn-primary" id="share-page">Share this page</button>
             <button type="button" class="btn btn-outline" id="write-another">Write to a foreign minister</button>
@@ -214,7 +218,8 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=20261030t"></script>
-  <script src="assets/js/take-action.js?v=20261030t"></script>
+  <script src="assets/js/main.js?v=20261030u"></script>
+  <script src="assets/js/auto-send.js?v=20261030u"></script>
+  <script src="assets/js/take-action.js?v=20261030u"></script>
 </body>
 </html>

@@ -46,6 +46,7 @@
   function refresh(force) {
     var t = target();
     fmBox.hidden = t !== "fm";
+    form.classList.toggle("af-manual", t === "fm");      // foreign ministers: sent from your own email
     if (!edited || force) {
       bodyEl.value = letter(t);
       subjEl.value = SUBJECT;
@@ -60,16 +61,22 @@
       "&body=" + encodeURIComponent(bodyEl.value);
   }
 
-  function valid() {
-    if (!nameEl.value.trim()) {
-      err.textContent = "Please add your name so the letter can be signed.";
-      err.hidden = false; nameEl.focus(); return false;
-    }
+  var AUTO = window.AFJ_SEND && AFJ_SEND.enabled();
+  var emailEl = $("your-email"), sendBtn = form.querySelector(".af-send");
+  function fail(msg, el) { err.textContent = msg; err.hidden = false; if (el) el.focus(); return false; }
+  function valid(needEmail) {
+    if (!nameEl.value.trim()) return fail("Please add your name so the letter can be signed.", nameEl);
+    if (needEmail && !AFJ_SEND.validEmail(emailEl.value.trim())) return fail("Please add your email address so your letter can be sent.", emailEl);
     err.hidden = true; return true;
   }
+  function openMail() {
+    window.location.href = "mailto:" + encodeURIComponent(recipient()).replace(/%40/g, "@") +
+      "?subject=" + encodeURIComponent(subjEl.value) + "&body=" + encodeURIComponent(bodyEl.value);
+  }
 
-  function thanks() {
-    var t = $("af-thanks"); t.hidden = false;
+  var THANKS_DEFAULT = $("af-thanks-msg").textContent;
+  function thanks(msg) {
+    var t = $("af-thanks"); $("af-thanks-msg").textContent = msg || THANKS_DEFAULT; t.hidden = false;
     t.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }
 
@@ -97,13 +104,26 @@
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    if (!valid()) return;
-    var to = recipient();
-    window.location.href = "mailto:" + encodeURIComponent(to).replace(/%40/g, "@") +
-      "?subject=" + encodeURIComponent(subjEl.value) +
-      "&body=" + encodeURIComponent(bodyEl.value);
-    setTimeout(thanks, 600);
+    if (!AUTO || target() !== "pm") { if (!valid()) return; openMail(); setTimeout(thanks, 600); return; }
+    if (!valid(true)) return;
+    sendBtn.disabled = true; sendBtn.textContent = "Sending…";
+    AFJ_SEND.send("azerbaijan-pm", {
+      name: nameEl.value.trim(), email: emailEl.value.trim(), subject: subjEl.value, body: bodyEl.value,
+      website: form.querySelector('[name="website"]').value
+    }).then(function (res) {
+      sendBtn.disabled = false; sendBtn.textContent = "Send my email";
+      if (res.ok) {
+        if (res.count) AFJ_SEND.show($("af-count"), res.count);
+        thanks("Your letter has been sent to the Prime Minister of Iraq\u2019s office. Thank you! Now multiply it: send this page to five friends, and write to a foreign minister too.");
+      } else if (AFJ_SEND.MESSAGES[res.error]) {
+        fail(AFJ_SEND.MESSAGES[res.error], res.error === "email" ? emailEl : null);
+      } else {
+        fail("We couldn\u2019t send it automatically just now, so your email app is opening with the letter ready \u2014 just tap send.");
+        openMail(); setTimeout(thanks, 600);
+      }
+    });
   });
+  if (AUTO) AFJ_SEND.count("azerbaijan-pm", $("af-count"));
 
   gmail.addEventListener("click", function (e) {
     if (!valid()) { e.preventDefault(); return; }

@@ -1095,3 +1095,11 @@ form.afj-form { display: grid; gap: 1rem; }
   .hc-grid .hc-card:last-child:nth-child(2n+1) { grid-column: 1 / -1; }
 }
 @media (max-width: 560px) { .hc-grid .hc-card:last-child { grid-column: auto; } }
+
+/* Take action: automatic sending (assets/js/auto-send.js sets .afj-auto when the mailer is connected) */
+:root:not(.afj-auto) .auto-only, .afj-auto .manual-only, .afj-auto .af-manual .auto-only { display: none !important; }
+.afj-auto .af-manual span.manual-only { display: inline !important; }
+.afj-auto .af-manual p.manual-only { display: block !important; }
+.af-hp { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; opacity: 0; }
+.af-count { margin: 0; font-weight: 700; color: var(--green-700); font-size: .95rem; }
+.af-count::before { content: "\2709\FE0E  "; color: var(--gold, #c8a24a); }

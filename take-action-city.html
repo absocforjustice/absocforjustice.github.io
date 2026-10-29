@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script>document.documentElement.className+=" js";</script>
-  <link rel="stylesheet" href="assets/css/style.css?v=20261030t">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261030u">
   <link rel="icon" href="assets/img/afj-logo.jpeg">
 </head>
 <body>
@@ -57,8 +57,8 @@
         <p>Write to the university and demand that it discloses every link to the arms trade, divests from arms companies and military contractors, and ends research partnerships with weapons makers. Students of City St George&rsquo;s and members of the public can both take part.</p>
         <ol class="action-steps">
           <li><span>1</span><div>Choose whether you&rsquo;re a City student or a member of the public.</div></li>
-          <li><span>2</span><div>Add your name &mdash; you can edit the letter too.</div></li>
-          <li><span>3</span><div>Press <strong>Send my email</strong>. Your email opens with everything filled in &mdash; just tap send.</div></li>
+          <li><span>2</span><div>Add your name<span class="auto-only"> and email</span> &mdash; you can edit the letter too.</div></li>
+          <li><span>3</span><div>Press <strong>Send my email</strong>.<span class="auto-only"> Your letter is sent straight to the university &mdash; that&rsquo;s it.</span><span class="manual-only"> Your email opens with everything filled in &mdash; just tap send.</span></div></li>
         </ol>
       </div>
 
@@ -70,6 +70,7 @@
         </fieldset>
         <div class="af-row">
           <label><span class="lbl">Your name <em>*</em></span><input type="text" id="c-name" placeholder="Your full name" autocomplete="name" required></label>
+          <label class="auto-only"><span class="lbl">Your email <em>*</em></span><input type="email" id="c-email" placeholder="you@example.com" autocomplete="email"></label>
           <label class="c-course" hidden><span class="lbl">Course and year <small>(optional)</small></span><input type="text" id="c-course" placeholder="e.g. BSc Economics, Year 2" autocomplete="off"></label>
         </div>
         <label class="af-letter-label"><span class="lbl">Your letter <small>(edit it if you like)</small></span>
@@ -77,16 +78,19 @@
           <textarea id="c-body" rows="16"></textarea>
         </label>
         <p class="af-to">To: <span>enquiries@city.ac.uk, studentcentre@citystgeorges.ac.uk</span></p>
+        <p class="af-count" id="c-count" hidden></p>
         <p class="af-error" id="c-error" role="alert" hidden></p>
+        <input type="text" name="website" class="af-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="af-buttons">
           <button type="submit" class="btn btn-primary af-send">Send my email</button>
           <a class="btn btn-outline" id="c-gmail" href="#" target="_blank" rel="noopener">Send with Gmail</a>
           <button type="button" class="btn btn-outline" id="c-copy">Copy letter</button>
         </div>
-        <p class="af-note">&ldquo;Send my email&rdquo; opens the email app on your phone or computer. If nothing opens, use &ldquo;Send with Gmail&rdquo;, or copy the letter and paste it into any email.</p>
+        <p class="af-note auto-only">Your letter goes straight to City St George&rsquo;s, sent by ABSoc for Justice and signed with your name. Your email is added as the reply address, so they can answer you directly. Prefer to send it yourself? Use &ldquo;Send with Gmail&rdquo; or copy the letter.</p>
+        <p class="af-note manual-only">&ldquo;Send my email&rdquo; opens the email app on your phone or computer. If nothing opens, use &ldquo;Send with Gmail&rdquo;, or copy the letter and paste it into any email.</p>
         <div class="af-thanks" id="c-thanks" hidden>
           <h3>Thank you</h3>
-          <p>Once you&rsquo;ve tapped send in your email app, your letter is on its way. Now multiply it: send this page to five friends.</p>
+          <p id="c-thanks-msg">Once you&rsquo;ve tapped send in your email app, your letter is on its way. Now multiply it: send this page to five friends.</p>
           <div class="af-buttons"><button type="button" class="btn btn-primary" id="c-share">Share this page</button></div>
         </div>
       </form>
@@ -139,7 +143,8 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=20261030t"></script>
-  <script src="assets/js/take-action-city.js?v=20261030t"></script>
+  <script src="assets/js/main.js?v=20261030u"></script>
+  <script src="assets/js/auto-send.js?v=20261030u"></script>
+  <script src="assets/js/take-action-city.js?v=20261030u"></script>
 </body>
 </html>
