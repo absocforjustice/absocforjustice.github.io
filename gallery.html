@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script>document.documentElement.className+=" js";</script>
-  <link rel="stylesheet" href="assets/css/style.css?v=20261030y">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261030z">
   <link rel="icon" href="assets/img/afj-logo.jpeg">
 </head>
 <body>
@@ -20,14 +20,22 @@
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="work.html">Our Work</a></li>
+        <li class="has-sub"><button type="button" class="sub-toggle" aria-expanded="false">About <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="sub">
+            <li><a href="about.html">About us</a></li>
+            <li><a href="work.html">Our work</a></li>
+            <li><a href="statements.html">Statements</a></li>
+          </ul>
+        </li>
         <li><a href="campaigns.html">Campaigns</a></li>
         <li><a href="events.html">Events</a></li>
+        <li class="has-sub"><button type="button" class="sub-toggle" aria-expanded="false">Education <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="sub">
+            <li><a href="reading-list.html">Reading list</a></li>
+            <li><a href="articles.html">Articles</a></li>
+          </ul>
+        </li>
         <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="reading-list.html">Reading List</a></li>
-        <li><a href="articles.html">Articles</a></li>
-        <li><a href="statements.html">Statements</a></li>
         <li><a href="get-involved.html">Get Involved</a></li>
         <li><a href="shop.html">Shop</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -186,7 +194,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=20261030y"></script>
-  <script src="assets/js/gallery.js?v=20261030y"></script>
+  <script src="assets/js/main.js?v=20261030z"></script>
+  <script src="assets/js/gallery.js?v=20261030z"></script>
 </body>
 </html>

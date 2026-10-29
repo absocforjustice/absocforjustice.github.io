@@ -16,6 +16,37 @@
     });
   }
 
+  /* ---- Dropdown menus (About, Education): click/tap to open, hover on desktop ---- */
+  var subs = Array.prototype.slice.call(document.querySelectorAll(".nav-links .has-sub"));
+  function closeSubs(except) {
+    subs.forEach(function (li) {
+      if (li === except) return;
+      li.classList.remove("sub-open");
+      li.querySelector(".sub-toggle").setAttribute("aria-expanded", "false");
+    });
+  }
+  subs.forEach(function (li) {
+    var btn = li.querySelector(".sub-toggle");
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var open = !li.classList.contains("sub-open");
+      closeSubs(li);
+      li.classList.toggle("sub-open", open);
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    li.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { closeSubs(); btn.focus(); }
+    });
+    li.addEventListener("focusout", function (e) {
+      if (!li.contains(e.relatedTarget) && window.matchMedia("(min-width: 1181px)").matches) {
+        li.classList.remove("sub-open"); btn.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".has-sub")) closeSubs();
+  });
+
   /* ---- Active nav link based on filename ---- */
   var path = location.pathname.split("/").pop() || "index.html";
   if (path.indexOf("take-action") === 0) path = "campaigns.html";
@@ -23,6 +54,8 @@
     var href = a.getAttribute("href");
     if (href === path || (path === "" && href === "index.html")) {
       a.classList.add("active");
+      var parent = a.closest(".has-sub");
+      if (parent) parent.querySelector(".sub-toggle").classList.add("active");
     }
   });
 

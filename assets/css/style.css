@@ -1173,3 +1173,36 @@ form.afj-form { display: grid; gap: 1rem; }
 .soon-tile--photo figcaption { position: relative; z-index: 1; color: #f3e7cf; font-size: .92rem; line-height: 1.35; }
 .soon-tile--photo figcaption b { display: block; font-family: var(--font-head); font-size: 1.35rem; color: #fff; }
 @media (max-width: 1180px) { .nav-links a { display: block; } }
+
+/* ---------- Nav dropdowns (About, Education) ---------- */
+.nav-links .has-sub { position: relative; }
+.sub-toggle {
+  display: inline-flex; align-items: center; gap: .3rem;
+  background: none; border: 0; cursor: pointer; font: inherit;
+  color: #e9e3d4; font-size: .86rem; font-weight: 500;
+  padding: .5rem .55rem; border-radius: 8px; white-space: nowrap;
+}
+.sub-toggle:hover, .sub-toggle.active, .has-sub.sub-open > .sub-toggle { color: #fff; background: rgba(200,162,74,.18); }
+.sub-toggle .caret { width: 11px; height: 11px; transition: transform .2s ease; }
+.has-sub.sub-open > .sub-toggle .caret { transform: rotate(180deg); }
+.nav-links .sub { list-style: none; margin: 0; padding: 0; }
+@media (min-width: 1181px) {
+  .nav-links .sub {
+    position: absolute; top: calc(100% + 8px); left: 0; min-width: 190px;
+    background: #3a0f12; border: 1px solid rgba(200,162,74,.3); border-radius: 12px;
+    padding: .4rem; box-shadow: 0 16px 36px rgba(0,0,0,.35);
+    opacity: 0; visibility: hidden; transform: translateY(-4px);
+    transition: opacity .15s ease, transform .15s ease, visibility 0s linear .15s;
+  }
+  .nav-links .sub::before { content: ""; position: absolute; left: 0; right: 0; top: -10px; height: 10px; }  /* hover bridge */
+  .has-sub:hover > .sub, .has-sub.sub-open > .sub {
+    opacity: 1; visibility: visible; transform: none; transition: opacity .15s ease, transform .15s ease;
+  }
+  .has-sub:hover > .sub-toggle .caret { transform: rotate(180deg); }
+  .nav-links .sub a { display: block; padding: .6rem .8rem; }
+}
+@media (max-width: 1180px) {
+  .sub-toggle { display: flex; width: 100%; justify-content: space-between; padding: .85rem .4rem; border-bottom: 1px solid rgba(255,255,255,.06); border-radius: 0; font-size: .95rem; }
+  .nav-links .sub { display: none; padding-left: 1rem; }
+  .has-sub.sub-open > .sub { display: block; }
+}
