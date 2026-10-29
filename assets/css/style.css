@@ -716,3 +716,119 @@ form.afj-form { display: grid; gap: 1rem; }
   font-size: .8rem; color: var(--muted); background: var(--cream-2);
   border: 1px dashed var(--line); border-radius: 8px; padding: .6rem .8rem;
 }
+
+/* ---------- Campaigns page ---------- */
+.page-hero--campaigns { background-image: linear-gradient(105deg, rgba(35,8,9,.88) 22%, rgba(45,11,12,.62) 100%), url("../img/gallery/placard-karbala-palestine.jpeg"); background-position: center 35%; }
+
+.camp-index {
+  position: sticky; top: var(--header-h, 74px); z-index: 20;
+  background: var(--paper); border-bottom: 1px solid var(--line);
+  box-shadow: 0 6px 18px rgba(63,17,19,.06);
+}
+.camp-index .container {
+  display: flex; gap: .5rem; overflow-x: auto; padding-top: .75rem; padding-bottom: .75rem;
+  scrollbar-width: none;
+}
+.camp-index .container::-webkit-scrollbar { display: none; }
+.camp-index a {
+  flex: 0 0 auto; display: inline-flex; align-items: center; gap: .5rem;
+  padding: .45rem .9rem; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--cream);
+  color: var(--green-800); font-weight: 600; font-size: .88rem; white-space: nowrap;
+}
+.camp-index a span { font-family: var(--font-head); color: var(--gold-dark); font-weight: 700; }
+.camp-index a:hover { border-color: var(--gold); background: var(--cream-2); }
+
+.camp { padding: clamp(3.5rem, 8vw, 6rem) 0; scroll-margin-top: 130px; }
+.camp:nth-of-type(even) { background: var(--cream-2); }
+.camp-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+.camp--flip .camp-grid { grid-template-columns: 1.2fr .8fr; }
+.camp--flip .camp-art { order: 2; }
+@media (max-width: 860px) {
+  .camp-grid, .camp--flip .camp-grid { grid-template-columns: 1fr; }
+  .camp--flip .camp-art { order: 0; }
+}
+
+.camp-art {
+  position: sticky; top: 150px;
+  aspect-ratio: 4 / 5; border-radius: var(--radius); overflow: hidden;
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  background:
+    radial-gradient(circle at 75% 20%, rgba(200,162,74,.18), rgba(200,162,74,0) 55%),
+    linear-gradient(160deg, var(--green-700), var(--green-900));
+  box-shadow: var(--shadow);
+  isolation: isolate;
+}
+.camp-art::before {
+  content: ""; position: absolute; inset: 14px; border: 1px solid rgba(200,162,74,.45);
+  border-radius: calc(var(--radius) - 6px); z-index: -1;
+}
+.camp-art.has-photo { background: var(--green-900); }
+.camp-photo {
+  position: absolute; inset: 0; z-index: -2;
+  background-size: cover; background-position: center;
+}
+.camp-photo::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(35,8,9,.25) 0%, rgba(35,8,9,.55) 55%, rgba(35,8,9,.92) 100%);
+}
+.camp-num {
+  font-family: var(--font-head); font-weight: 700; line-height: 1;
+  font-size: clamp(3.5rem, 9vw, 6rem); color: var(--gold);
+}
+.camp-ar {
+  font-family: "Amiri", "Scheherazade New", "Noto Nastaliq Urdu", "Traditional Arabic", serif;
+  color: #fff; font-weight: 700; line-height: 1.3; text-align: right;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  text-shadow: 0 2px 18px rgba(0,0,0,.45);
+}
+@media (max-width: 860px) {
+  .camp-art { position: relative; top: 0; aspect-ratio: 16 / 9; }
+}
+
+.camp-body h2 { margin: .2rem 0 1.1rem; line-height: 1.08; }
+.camp-body > p { color: var(--ink); font-size: 1.04rem; }
+.camp-facts {
+  margin: 1.6rem 0; padding: 1.2rem 1.3rem;
+  background: var(--paper); border: 1px solid var(--line); border-left: 4px solid var(--gold);
+  border-radius: 10px;
+}
+.camp-facts h3 {
+  font-size: .78rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--gold-dark); margin: 0 0 .6rem;
+}
+.camp-facts ul { margin: 0; padding-left: 1.1rem; }
+.camp-facts li { color: var(--muted); font-size: .95rem; margin: .35rem 0; }
+.camp-facts strong { color: var(--green-800); }
+.camp-call {
+  font-family: var(--font-head); font-size: clamp(1.15rem, 2.2vw, 1.4rem); line-height: 1.35;
+  color: var(--green-800); margin: 0 0 1.4rem;
+}
+.camp-call span {
+  display: block; font-family: var(--font-body); font-size: .75rem; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: .35rem;
+}
+.camp-actions { display: flex; flex-wrap: wrap; gap: .7rem; }
+
+.camp-sources { padding: 2rem 0 3rem; }
+.camp-sources summary { cursor: pointer; font-weight: 600; color: var(--green-700); }
+.camp-sources ul { margin: 1rem 0 0; padding-left: 1.1rem; }
+.camp-sources li { font-size: .88rem; margin: .4rem 0; }
+.camp-sources a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+
+/* ---------- Home: campaigns strip ---------- */
+.home-campaigns { background: var(--cream); }
+.hc-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
+@media (max-width: 1040px) { .hc-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .hc-grid { grid-template-columns: 1fr; } }
+.hc-card {
+  display: flex; flex-direction: column; gap: .6rem; min-height: 200px;
+  padding: 1.3rem; border-radius: var(--radius);
+  background: linear-gradient(160deg, var(--green-700), var(--green-900));
+  color: #fff; box-shadow: var(--shadow); transition: transform .2s ease;
+}
+.hc-card:hover { transform: translateY(-4px); color: #fff; }
+.hc-num { font-family: var(--font-head); font-size: 1.8rem; font-weight: 700; color: var(--gold); line-height: 1; }
+.hc-title { font-weight: 600; line-height: 1.35; flex: 1; }
+.hc-arrow { color: var(--gold); font-size: .85rem; font-weight: 600; }
