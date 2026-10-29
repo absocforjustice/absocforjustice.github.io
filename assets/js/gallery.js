@@ -17,7 +17,8 @@
     var a = links[i], fig = a.closest("figure");
     img.src = a.getAttribute("href");
     img.alt = a.querySelector("img").alt;
-    cap.textContent = fig.querySelector("figcaption").textContent;
+    var fc = fig.querySelector("figcaption");
+    cap.textContent = fc ? fc.textContent : "";
   }
   function open(n) { last = document.activeElement; show(n); box.classList.add("on"); document.documentElement.style.overflow = "hidden"; box.querySelector(".lb-close").focus(); }
   function close() { box.classList.remove("on"); document.documentElement.style.overflow = ""; if (last) last.focus(); }
