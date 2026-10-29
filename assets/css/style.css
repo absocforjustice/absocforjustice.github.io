@@ -1253,3 +1253,8 @@ form.afj-form { display: grid; gap: 1rem; }
 }
 .m-full { grid-column: 1 / -1; grid-row: span 2; }
 @media (max-width: 600px) { .m-tall figcaption { display: none; } }   /* placard words are readable in the photo; full caption shows when tapped */
+/* Contact sits with Get Involved and Donate on the right */
+@media (min-width: 1181px) {
+  .nav-links > li.nav-contact { margin-left: auto; }
+  .nav-links > li.nav-contact + li.nav-involved { margin-left: .5rem; }
+}
