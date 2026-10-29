@@ -1000,3 +1000,11 @@ form.afj-form { display: grid; gap: 1rem; }
 .hc-card--wide { grid-column: span 2; }
 @media (max-width: 900px) { .hc-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .hc-grid { grid-template-columns: 1fr; } .hc-card--wide { grid-column: auto; } }
+/* Britain panel: Arabic at the top so the banner in the photo stays visible */
+.camp-art--top { justify-content: flex-start; }
+.camp-art--top .camp-ar { position: absolute; top: clamp(1.4rem, 3vw, 2rem); right: clamp(1.4rem, 3vw, 2rem); }
+.camp-art--top .camp-photo::after { background: linear-gradient(180deg, rgba(35,8,9,.85) 0%, rgba(35,8,9,.35) 32%, rgba(35,8,9,0) 55%); }
+@media (max-width: 860px) {
+  .camp-art--top { aspect-ratio: 4 / 3; }
+  .camp-art--top .camp-photo { background-position: center 62%; }
+}
