@@ -126,7 +126,7 @@
     /* Leaves that flip over as the book opens */
     var cover = book.querySelector(".rbook-cover");
     if (cover && !book.querySelector(".rbook-leaf")) {
-      for (var L = 0; L < 4; L++) {
+      for (var L = 0; L < 2; L++) {
         var leaf = document.createElement("div");
         leaf.className = "rbook-leaf";
         leaf.setAttribute("aria-hidden", "true");
