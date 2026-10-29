@@ -42,19 +42,40 @@
     reveal.forEach(function (el) { el.classList.add("in"); });
   }
 
-  /* ---- Contact form (front-end only demo) ---- */
+  /* ---- Contact form: sends to Info.absocforjustice@gmail.com via FormSubmit ---- */
   var form = document.querySelector(".afj-form");
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var status = form.querySelector(".form-status");
-      if (status) {
-        status.textContent =
-          "Thank you — your message has been noted. (This demo form is not yet " +
-          "connected to a mail service; email Info.absocforjustice@gmail.com in the meantime.)";
-        status.style.display = "block";
+      var btn = form.querySelector('button[type="submit"]');
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      var data = {};
+      new FormData(form).forEach(function (v, k) { data[k] = v; });
+      if (data._honey) return;                                   // spam bot
+      if (data.subject) data._subject = "AFJ website: " + data.subject;
+      btn.disabled = true; btn.textContent = "Sending…";
+      function show(msg, ok) {
+        status.textContent = msg; status.style.display = "block";
+        status.style.borderColor = ok ? "" : "#a3191f";
       }
-      form.reset();
+      fetch("https://formsubmit.co/ajax/Info.absocforjustice@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(data)
+      }).then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+        .then(function (res) {
+          if (res.ok && String(res.j.success) === "true") {
+            show("Thank you — your message has been sent. We’ll get back to you soon, in shaa Allah.", true);
+            form.reset();
+          } else {
+            show("Sorry, your message couldn’t be sent just now. Please email Info.absocforjustice@gmail.com directly.", false);
+          }
+        })
+        .catch(function () {
+          show("Sorry, your message couldn’t be sent just now. Please email Info.absocforjustice@gmail.com directly.", false);
+        })
+        .then(function () { btn.disabled = false; btn.textContent = "Send message"; });
     });
   }
 

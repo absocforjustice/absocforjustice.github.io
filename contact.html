@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script>document.documentElement.className+=" js";</script>
-  <link rel="stylesheet" href="assets/css/style.css?v=20261030o">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261030p">
   <link rel="icon" href="assets/img/afj-logo.jpeg">
 </head>
 <body>
@@ -74,7 +74,11 @@
             <hr class="divider-gold">
             <h2>Send a message</h2>
           </div>
-          <form class="afj-form card">
+          <form class="afj-form card" action="https://formsubmit.co/Info.absocforjustice@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New message from the AFJ website">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
             <div>
               <label for="c-name">Name</label>
               <input id="c-name" name="name" type="text" required placeholder="Your name">
@@ -154,6 +158,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=20261030o"></script>
+  <script src="assets/js/main.js?v=20261030p"></script>
 </body>
 </html>
