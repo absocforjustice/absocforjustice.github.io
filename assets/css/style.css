@@ -1268,13 +1268,11 @@ form.afj-form { display: grid; gap: 1rem; }
 }
 .g-mosaic .m-captop figcaption { top: 0; bottom: auto; padding-top: .8rem; padding-bottom: 2rem; background: linear-gradient(0deg, rgba(20,4,5,0), rgba(20,4,5,.88) 60%); }
 
-/* Gallery header: the "Be an enemy to the oppressor" banner across the top, title underneath */
+/* Gallery header: speaker at the Solidarity with Fatema Zainab event */
 .page-hero.page-hero--gallery {
-  background-color: #2a0a0c;
-  background-image: linear-gradient(180deg, rgba(42,10,12,0) 0%, rgba(42,10,12,0) 62%, #2a0a0c 100%), url("../img/gallery/banner-enemy-oppressor.jpeg");
-  background-size: 100% 20.4vw, 100% auto; background-position: center top, center top;
-  padding-top: calc(20.4vw + .6rem); padding-bottom: 2.4rem;
+  background-image: linear-gradient(100deg, rgba(35,8,9,.92) 22%, rgba(35,8,9,.45) 50%, rgba(35,8,9,.15) 100%), url("../img/gallery/speaker-iran-flag.jpeg");
+  background-size: 150% auto; background-position: 0% 60%; min-height: 460px; display: flex; align-items: center;
 }
-@media (max-width: 760px) {
-  .page-hero.page-hero--gallery { background-size: 100% 35vw, 160% auto; background-position: center top, 47% top; padding-top: calc(35vw + .4rem); padding-bottom: 1.8rem; }
-}
+.page-hero.page-hero--gallery > .container { width: 100%; }
+@media (max-width: 760px) { .page-hero.page-hero--gallery { background-size: 200% auto; background-position: 6% 62%; min-height: 300px; } }
+
