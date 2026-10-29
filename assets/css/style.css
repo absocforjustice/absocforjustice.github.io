@@ -160,11 +160,9 @@ p { margin: 0 0 1.1em; }
 .hero {
   position: relative;
   background:
-    linear-gradient(90deg, rgba(28,6,8,.94) 0%, rgba(28,6,8,.82) 38%, rgba(28,6,8,.35) 60%, rgba(28,6,8,.08) 100%),
-    url("https://v3b.fal.media/files/b/0ab0461e/swVsLntoFCeahM7lgXFp6_gwTICYKO.jpg") 75% center/cover no-repeat,
+    linear-gradient(105deg, rgba(35,8,9,.92) 30%, rgba(45,11,12,.72) 100%),
     url("../img/gallery/protest-hussain-justice.jpeg") center 3%/cover no-repeat,
     var(--green-900);
-  min-height: min(82vh, 760px); display: flex; align-items: center;
   color: #fff;
   padding: clamp(4.5rem, 11vw, 8.5rem) 0;
   overflow: hidden;
@@ -177,18 +175,6 @@ p { margin: 0 0 1.1em; }
   opacity: .5;
 }
 .hero .container { position: relative; z-index: 1; max-width: 900px; }
-.hero .container { width: 100%; max-width: var(--maxw); }
-.hero .container > * { max-width: 640px; }
-@media (max-width: 760px) {
-  .hero {
-    min-height: 0; align-items: flex-start;
-    background:
-      linear-gradient(180deg, rgba(28,6,8,.05) 0%, rgba(28,6,8,.1) 22%, rgba(28,6,8,.85) 36%, rgba(28,6,8,.96) 100%),
-      url("https://v3b.fal.media/files/b/0ab0461e/swVsLntoFCeahM7lgXFp6_gwTICYKO.jpg") 82% top/auto 290px no-repeat,
-      #1c0608;
-    padding-top: 300px;
-  }
-}
 .hero h1 { color: #fff; margin-bottom: .3em; }
 .hero .lede { font-size: clamp(1.1rem, 2.2vw, 1.4rem); color: #ece6d6; max-width: 640px; }
 .hero .oneliner {
