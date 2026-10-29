@@ -1242,17 +1242,16 @@ form.afj-form { display: grid; gap: 1rem; }
   text-shadow: 0 1px 2px rgba(0,0,0,.4);
 }
 .m-big figcaption { font-size: 1rem; padding: 2.6rem 1.1rem 1rem; }
-@media (hover: hover) and (min-width: 900px) {
-  .m-tall figcaption { opacity: 0; transform: translateY(8px); transition: opacity .25s ease, transform .25s ease; }
-  .m-tall:hover figcaption, .m-tall:focus-within figcaption { opacity: 1; transform: none; }
-}
+
 @media (max-width: 900px) { .g-mosaic { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 150px; } }
 @media (max-width: 600px) {
   .g-mosaic { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 130px; gap: 8px; }
   .m-item figcaption { font-size: .78rem; padding: 1.8rem .7rem .65rem; }
 }
 .m-full { grid-column: 1 / -1; grid-row: span 2; }
-@media (max-width: 600px) { .m-tall figcaption { display: none; } }   /* placard words are readable in the photo; full caption shows when tapped */
+@media (max-width: 600px) {
+
+}
 /* Contact sits with Get Involved and Donate on the right */
 @media (min-width: 1181px) {
   .nav-links > li.nav-contact { margin-left: auto; }
@@ -1262,3 +1261,9 @@ form.afj-form { display: grid; gap: 1rem; }
 /* Gallery: placard captions always visible */
 .m-tall figcaption { display: block !important; opacity: 1 !important; transform: none !important; }
 @media (max-width: 600px) { .m-tall figcaption { font-size: .72rem; padding: 1.6rem .6rem .55rem; } }
+.m-tall figcaption { font-size: .8rem; }
+@media (max-width: 600px) {
+  .g-mosaic .m-tall figcaption { font-size: .66rem; line-height: 1.3; padding: 1.4rem .55rem .5rem; }
+  .g-mosaic .m-big figcaption, .g-mosaic .m-full figcaption { font-size: .76rem; }
+}
+.g-mosaic .m-captop figcaption { top: 0; bottom: auto; padding-top: .8rem; padding-bottom: 2rem; background: linear-gradient(0deg, rgba(20,4,5,0), rgba(20,4,5,.88) 60%); }
