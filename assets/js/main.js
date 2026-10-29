@@ -59,7 +59,25 @@
         status.textContent = msg; status.style.display = "block";
         status.style.borderColor = ok ? "" : "#a3191f";
       }
-      fetch("https://formsubmit.co/ajax/Info.absocforjustice@gmail.com", {
+      var TO = "info.absocforjustice@gmail.com";
+      // If the automatic send fails, hand the message to the visitor's own email so it still reaches us.
+      function fallback(why) {
+        if (why && window.console) console.warn("Contact form:", why);
+        var subj = data._subject || "Message from the AFJ website";
+        var body = data.message + "\n\n— " + data.name + " (" + data.email + ")";
+        var mailto = "mailto:" + TO + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body);
+        var gmail = "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(TO) +
+          "&su=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body);
+        status.innerHTML = "";
+        var p = document.createElement("p");
+        p.textContent = "Almost there — tap a button below and your message opens in your email, already written. Just tap send.";
+        var row = document.createElement("div"); row.className = "hero-actions"; row.style.marginTop = ".8rem";
+        var a1 = document.createElement("a"); a1.className = "btn btn-primary"; a1.href = mailto; a1.textContent = "Open my email app";
+        var a2 = document.createElement("a"); a2.className = "btn btn-outline"; a2.href = gmail; a2.target = "_blank"; a2.rel = "noopener"; a2.textContent = "Send with Gmail";
+        row.appendChild(a1); row.appendChild(a2); status.appendChild(p); status.appendChild(row);
+        status.style.display = "block"; status.style.borderColor = "";
+      }
+      fetch("https://formsubmit.co/ajax/" + TO, {
         method: "POST",
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify(data)
@@ -69,12 +87,10 @@
             show("Thank you — your message has been sent. We’ll get back to you soon, in shaa Allah.", true);
             form.reset();
           } else {
-            show("Sorry, your message couldn’t be sent just now. Please email Info.absocforjustice@gmail.com directly.", false);
+            fallback(res.j && res.j.message);
           }
         })
-        .catch(function () {
-          show("Sorry, your message couldn’t be sent just now. Please email Info.absocforjustice@gmail.com directly.", false);
-        })
+        .catch(function (err) { fallback(err && err.message); })
         .then(function () { btn.disabled = false; btn.textContent = "Send message"; });
     });
   }
