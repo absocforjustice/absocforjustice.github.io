@@ -1258,3 +1258,4 @@ form.afj-form { display: grid; gap: 1rem; }
   .nav-links > li.nav-contact { margin-left: auto; }
   .nav-links > li.nav-contact + li.nav-involved { margin-left: .5rem; }
 }
+@media (max-width: 1180px) { .nav-contact + .nav-involved { margin-top: .5rem; } }
