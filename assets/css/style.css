@@ -996,9 +996,9 @@ form.afj-form { display: grid; gap: 1rem; }
 .lb-prev { left: 12px; top: 50%; transform: translateY(-50%); }
 .lb-next { right: 12px; top: 50%; transform: translateY(-50%); }
 @media (max-width: 560px) { .lb-prev, .lb-next { top: auto; bottom: 14px; transform: none; } }
-.hc-grid { grid-template-columns: repeat(4, 1fr); }
-.hc-card--wide { grid-column: span 2; }
-@media (max-width: 900px) { .hc-grid { grid-template-columns: repeat(2, 1fr); } }
+.hc-grid { grid-template-columns: repeat(3, 1fr); }
+.hc-card--wide { grid-column: auto; }
+@media (max-width: 900px) { .hc-grid { grid-template-columns: repeat(2, 1fr); } .hc-card--wide { grid-column: span 2; } }
 @media (max-width: 560px) { .hc-grid { grid-template-columns: 1fr; } .hc-card--wide { grid-column: auto; } }
 /* Britain panel: Arabic at the top so the banner in the photo stays visible */
 .camp-art--top { justify-content: flex-start; }

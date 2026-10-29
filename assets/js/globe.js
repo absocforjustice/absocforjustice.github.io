@@ -18,8 +18,10 @@
     ["Lebanon", "03", 35.6, 33.9, "lebanon", -1, -1.2],
     ["Azerbaijan", "04", 49.9, 40.4, "azerbaijan", 1, -1.3],
     ["Bahrain", "05", 50.6, 26.2, "bahrain", 1, 1.2],
-    ["Pakistan", "06", 70.1, 33.9, "pakistan", 1, 0.45],
-    ["Jannat al-Baqi", "07", 39.6, 24.5, "baqi", -1, 1.7]
+    ["Pakistan", "06", 70.1, 33.9, "pakistan", 1, 1.0],
+    ["Jannat al-Baqi", "07", 39.6, 24.5, "baqi", -1, 2.8],
+    ["Nigeria", "08", 7.7, 11.1, "nigeria", -1, 0.1],
+    ["Afghanistan", "09", 67.0, 34.6, "hazara", 1, -0.4]
   ].map(function (p) {
     return { name: p[0], num: p[1], lam: p[2] * D, phi: p[3] * D, id: p[4], dx: p[5], dy: p[6] };
   });
