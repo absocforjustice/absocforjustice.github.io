@@ -13,12 +13,13 @@
 
   // Campaign markers: [label, number, lon, lat, anchor id, label offset dx, dy]
   var PLACES = [
-    ["Palestine", "01", 35.0, 31.6, "palestine", -1, 0.35],
-    ["Lebanon", "02", 35.6, 33.9, "lebanon", -1, -1.2],
-    ["Azerbaijan", "03", 49.9, 40.4, "azerbaijan", 1, -1.3],
-    ["Bahrain", "04", 50.6, 26.2, "bahrain", 1, 1.2],
-    ["Pakistan", "05", 70.1, 33.9, "pakistan", 1, 0.45],
-    ["Jannat al-Baqi", "06", 39.6, 24.5, "baqi", -1, 1.7]
+    ["Britain", "01", -1.5, 52.5, "britain", -1, -0.6],
+    ["Palestine", "02", 35.0, 31.6, "palestine", -1, 0.35],
+    ["Lebanon", "03", 35.6, 33.9, "lebanon", -1, -1.2],
+    ["Azerbaijan", "04", 49.9, 40.4, "azerbaijan", 1, -1.3],
+    ["Bahrain", "05", 50.6, 26.2, "bahrain", 1, 1.2],
+    ["Pakistan", "06", 70.1, 33.9, "pakistan", 1, 0.45],
+    ["Jannat al-Baqi", "07", 39.6, 24.5, "baqi", -1, 1.7]
   ].map(function (p) {
     return { name: p[0], num: p[1], lam: p[2] * D, phi: p[3] * D, id: p[4], dx: p[5], dy: p[6] };
   });
@@ -32,7 +33,7 @@
   }
 
   var W = 0, H = 0, R = 0, cx = 0, cy = 0, dpr = 1;
-  var rot = -45 * D;          // centre longitude (45°E faces the viewer to start)
+  var rot = 22 * D;           // centre longitude (22°E faces the viewer to start, so Britain and the Middle East are both in view)
   var tilt = 22 * D;          // look slightly down on the northern hemisphere
   var stp = Math.sin(tilt), ctp = Math.cos(tilt);
   var speed = 10 * D;         // degrees per second
