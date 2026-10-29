@@ -224,40 +224,4 @@
   .rbook-3d, .rbook-cover, .rbook-page, .rbook-caption, .rbook-backdrop { transition: none !important; }
 }
 
-/* ---- Page flip: a few leaves flutter across as the book opens ---- */
-.rbook-leaf {
-  position: absolute; inset: 1.5% 0 1.5% 0;
-  transform-style: preserve-3d;
-  transform-origin: 0 50%;
-  transform: translateZ(.6px);
-  pointer-events: none;
-  visibility: hidden;
-}
-.rbook-leaf > span {
-  position: absolute; inset: 0;
-  -webkit-backface-visibility: hidden; backface-visibility: hidden;
-  border-radius: 1px 4px 4px 1px;
-  background:
-    repeating-linear-gradient(180deg, rgba(63,17,19,0) 0 7%, rgba(63,17,19,.10) 7% 7.6%),
-    linear-gradient(90deg, rgba(63,17,19,.14), rgba(63,17,19,0) 12%, rgba(63,17,19,0) 88%, rgba(63,17,19,.06)),
-    #f6efe2;
-  background-clip: content-box, border-box, border-box;
-  padding: 12% 10% 14% 14%;
-  box-shadow: inset 0 0 0 1px rgba(63,17,19,.08);
-}
-.rbook-leaf > span + span { transform: rotateY(180deg); padding: 12% 14% 14% 10%; }
-.rbook.is-open .rbook-leaf {
-  visibility: visible;
-  animation: rbook-flip .38s cubic-bezier(.45, .05, .3, 1) both;
-}
-.rbook.is-open .rbook-leaf:nth-of-type(1) { animation-delay: .22s; }
-.rbook.is-open .rbook-leaf:nth-of-type(2) { animation-delay: .32s; }
-@keyframes rbook-flip {
-  0%   { transform: translateZ(.6px) rotateY(0deg);    opacity: 1; filter: brightness(1); }
-  45%  { filter: brightness(.86); }
-  88%  { transform: translateZ(.6px) rotateY(-172deg); opacity: 1; filter: brightness(1); }
-  100% { transform: translateZ(.6px) rotateY(-178deg); opacity: 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .rbook-leaf { display: none; }
-}
+
