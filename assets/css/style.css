@@ -554,7 +554,7 @@ form.afj-form { display: grid; gap: 1rem; }
   padding: clamp(3.5rem,8vw,6rem) 0;
   background:
     linear-gradient(rgba(35,8,9,.88), rgba(35,8,9,.88)),
-    url("../img/gallery/march-flags-nations.jpeg") center 30%/cover no-repeat,
+    url("../img/gallery/placard-karbala-palestine.jpeg") center 30%/cover no-repeat,
     var(--green-900);
   border-top: 4px solid var(--gold); border-bottom: 4px solid var(--gold);
 }
