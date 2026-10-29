@@ -1072,3 +1072,10 @@ form.afj-form { display: grid; gap: 1rem; }
   .camp-index .ci-track { animation: none; }
   .camp-index .ci-group[aria-hidden="true"] { display: none; }
 }
+.stu-card--landmark { background: #fbf5e8; border-left-color: var(--green-700); }
+.stu-kicker { margin: 0 0 .2rem; font-size: .72rem !important; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-dark) !important; }
+.stu-quote {
+  margin: .8rem 0 1rem; padding: .8rem 1rem; border-left: 3px solid var(--gold);
+  background: var(--paper); font-family: Georgia, "Times New Roman", serif; font-style: italic; color: var(--green-800);
+}
+.stu-quote cite { display: block; margin-top: .4rem; font-style: normal; font-family: var(--font-body); font-size: .82rem; font-weight: 700; color: var(--gold-dark); }
