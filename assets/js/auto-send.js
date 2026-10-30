@@ -7,7 +7,7 @@ window.AFJ_SEND = (function () {
   "use strict";
 
   // Paste the Apps Script web app URL between the quotes:
-  var URL = "";
+  var URL = "https://script.google.com/macros/s/AKfycbzVQAO8XcwB8WPtnRFSFJG-RRru5oxlm7GKGptuSI-s69k1SjGghi6EV4GEjhQ8QZufxw/exec";
 
   if (URL) document.documentElement.classList.add("afj-auto");
 
