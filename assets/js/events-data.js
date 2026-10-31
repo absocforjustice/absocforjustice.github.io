@@ -18,15 +18,15 @@
 window.AFJ_EVENTS = [
 
   {
-    title: "Guidance to Islamic Activism",
+    title: "Guide to Islamic Activism",
     date: "2026-11-14",
     start: "17:00",
     place: "Palestine House, 113 High Holborn",
     city: "London WC1V 6JQ",
-    about: "Discussion, Q&A and workshop, hosted by ABSoc for Justice with Palestine House. Everyone welcome. Tickets £6.",
-    speakers: ["Zayn Ahmed, political activist", "Ammar Kazmi, legal expert", "Aymun Moosavi, political activist", "Batool Subeiti, political analyst", "and more"],
+    about: "Discussion, Q&A and workshop, hosted by ABSoc for Justice with Palestine House. Everyone welcome. Tickets £6. Plus an AFJ exclusive merch stall.",
+    speakers: ["Aymun Moosavi, activist", "Batool Subeiti, analyst", "Ammar Kazmi, legal expert", "Zayn Ahmed, activist", "and more"],
     topics: ["What is Islamic activism?", "How can Muslims engage in lawfare against Zionists?", "Who should Muslims vote for?", "How should Muslims combat Islamophobia?", "Street activism, direct action and more"],
-    image: "assets/img/events/guidance-to-islamic-activism.jpeg",
+    image: "assets/img/events/guide-to-islamic-activism.jpeg",
     link: "https://instagram.com/absocforjustice",
     linkText: "Register (£6) — link in bio"
   },
