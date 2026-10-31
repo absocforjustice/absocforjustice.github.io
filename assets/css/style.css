@@ -692,7 +692,7 @@ form.afj-form { display: grid; gap: 1rem; }
   border-bottom: 3px solid var(--gold);
 }
 .page-hero--about { background-image: linear-gradient(105deg, rgba(35,8,9,.86) 22%, rgba(45,11,12,.60) 100%), url("../img/gallery/fatema-zainab-panel.jpeg"); }
-.page-hero--work { background-image: linear-gradient(105deg, rgba(35,8,9,.86) 22%, rgba(45,11,12,.60) 100%), url("../img/gallery/event-panel-keffiyeh.jpeg"); }
+.page-hero--work { background-image: linear-gradient(105deg, rgba(35,8,9,.86) 22%, rgba(45,11,12,.60) 100%), url("../img/gallery/event-panel-keffiyeh.jpeg"); background-position: center 18%; }
 .page-hero--gallery { background-image: linear-gradient(100deg, rgba(35,8,9,.92) 18%, rgba(35,8,9,.55) 45%, rgba(35,8,9,.2) 100%), url("../img/gallery/banner-enemy-oppressor.jpeg"); background-position: 70% center; background-size: cover; }
 .page-hero--reading { background-image: linear-gradient(105deg, rgba(35,8,9,.86) 22%, rgba(45,11,12,.60) 100%), url("../img/gallery/hall-packed-audience.jpeg"); }
 .page-hero--statements { background-image: linear-gradient(105deg, rgba(35,8,9,.86) 22%, rgba(45,11,12,.60) 100%), url("../img/gallery/placard-zaynab.jpeg"); }
