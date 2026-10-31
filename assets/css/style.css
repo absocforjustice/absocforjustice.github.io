@@ -1316,20 +1316,8 @@ form.afj-form { display: grid; gap: 1rem; }
   .nav-cta .btn-primary:hover { box-shadow: 0 8px 28px rgba(200,162,74,.5); }
 }
 
-/* Our Work header: split design — maroon panel with the title, photo of both speakers on the right, gold divider */
-@media (min-width: 761px) {
-  .page-hero.page-hero--work {
-    min-height: 440px; display: flex; align-items: center;
-    background-color: #2a0a0c;
-    background-image:
-      linear-gradient(90deg, transparent calc(42% - 3px), #c8a24a calc(42% - 3px), #c8a24a 42%, transparent 42%),
-      linear-gradient(90deg, #2a0a0c 0, #2a0a0c 42%, rgba(42,10,12,.12) 42%, rgba(42,10,12,.05) 100%),
-      radial-gradient(600px 400px at 18% 50%, rgba(200,162,74,.12), rgba(200,162,74,0) 70%),
-      url("../img/gallery/event-panel-keffiyeh.jpeg");
-    background-size: 100% 100%, 100% 100%, 100% 100%, 58% auto;
-    background-position: center, center, center, right 17%;
-    background-repeat: no-repeat;
-  }
-  .page-hero.page-hero--work > .container { width: 100%; }
-  .page-hero--work .container p:not(.breadcrumb) { max-width: 30ch; }
+/* Our Work header: full photo like the other pages, positioned so both speakers' faces show */
+.page-hero.page-hero--work {
+  background-image: linear-gradient(100deg, rgba(35,8,9,.85) 0%, rgba(35,8,9,.55) 40%, rgba(35,8,9,.2) 75%, rgba(35,8,9,.1) 100%), url("../img/gallery/community-legal-workshop.jpeg");
+  background-size: cover; background-position: center 45%;
 }
