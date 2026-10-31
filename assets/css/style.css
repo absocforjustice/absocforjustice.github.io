@@ -1302,3 +1302,16 @@ form.afj-form { display: grid; gap: 1rem; }
 .nav-cta .btn-primary:hover { color: #fff !important; }
 .nav-involved .btn { font-weight: 600; }
 .brand-logo { box-shadow: 0 0 0 1px rgba(200,162,74,.35); }
+
+/* ---------- Nav: MSC-inspired finish ---------- */
+@media (min-width: 1181px) {
+  .nav-links > li > a, .nav-links .sub-toggle { font-size: .9rem; font-weight: 600; letter-spacing: .01em; color: #d9cdb8; }
+  .nav-links > li:not(.nav-cta) > a.active, .nav-links .sub-toggle.active { color: #e8c468 !important; }
+  .nav-links > li:not(.nav-cta) > a:hover, .nav-links .sub-toggle:hover { color: #fff; }
+  .nav-links > li:not(.nav-cta) > a::after, .nav-links .sub-toggle::after { height: 2px; bottom: .05rem; }
+  .nav-cta .btn { height: 2.7rem; display: inline-flex; align-items: center; padding: 0 1.25rem; border-radius: 10px; font-size: .88rem; }
+  .nav-involved .btn { background: rgba(255,255,255,.03); border: 1px solid rgba(232,196,104,.35); color: #f3ead9; }
+  .nav-involved .btn:hover, .nav-involved .btn.active { border-color: #e8c468; background: rgba(232,196,104,.08); color: #fff; }
+  .nav-cta .btn-primary { text-transform: uppercase; letter-spacing: .08em; font-weight: 800; box-shadow: 0 6px 22px rgba(200,162,74,.35); }
+  .nav-cta .btn-primary:hover { box-shadow: 0 8px 28px rgba(200,162,74,.5); }
+}
