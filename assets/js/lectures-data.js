@@ -13,12 +13,6 @@
 */
 window.AFJ_LECTURES = [
 
-  {
-    title: "Imam Khomeini documentary series",
-    category: "Documentaries",
-    about: "The life, thought and revolution of Imam Khomeini.",
-    youtube: "BekKnfhBoVA"
-  },
 
   {
     title: "The Nakba documentary series (Parts 1–4)",
