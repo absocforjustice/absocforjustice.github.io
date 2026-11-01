@@ -21,7 +21,7 @@
     if (!groups[c]) { groups[c] = []; order.push(c); }
     groups[c].push(l);
   });
-  var rank = { "AFJ Events": 0, "Lectures": 1 };
+  var rank = { "AFJ Events": 0, "Talks": 1, "Lectures": 2 };
   order.sort(function (a, b) { return (a in rank ? rank[a] : 9) - (b in rank ? rank[b] : 9); });
 
   wrap.innerHTML = order.map(function (c) {

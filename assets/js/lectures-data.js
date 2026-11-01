@@ -20,6 +20,12 @@ window.AFJ_LECTURES = [
     youtube: "3oYRDlQldII"
   },
 
+  {
+    title: "Qesser Zuhrah tells her story",
+    category: "Talks",
+    youtube: "f5e75syjhfU"
+  },
+
 
   {
     title: "The Nakba documentary series (Parts 1–4)",
