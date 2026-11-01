@@ -1336,3 +1336,20 @@ form.afj-form { display: grid; gap: 1rem; }
   .nav-toggle { order: 2; }
 }
 .hero .oneliner .oneliner-sub { display: block; margin-top: .35rem; font-family: var(--font-body, inherit); font-weight: 600; text-transform: none; letter-spacing: .02em; font-size: clamp(.95rem, 1.6vw, 1.15rem); color: #f1e9db; }
+
+/* ---------- Lectures ---------- */
+.page-hero--lectures { background-image: linear-gradient(105deg, rgba(35,8,9,.86) 22%, rgba(45,11,12,.60) 100%), url("../img/gallery/event-panel-audience.jpeg"); }
+.lec-cat { font-family: var(--font-head); text-transform: uppercase; color: var(--green-900); font-size: clamp(1.4rem, 2.6vw, 1.9rem); margin: 2.2rem 0 1rem; padding-bottom: .5rem; border-bottom: 2px solid var(--gold); }
+.lec-cat:first-child { margin-top: 0; }
+.lec-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.4rem; }
+.lec-card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 10px 28px rgba(63,17,19,.08); display: flex; flex-direction: column; }
+.lec-thumb, .lec-card iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; padding: 0; background: #1c0506; position: relative; cursor: pointer; }
+.lec-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: .9; transition: opacity .2s ease, transform .4s ease; }
+.lec-thumb:hover img { opacity: 1; transform: scale(1.03); }
+.lec-play { position: absolute; left: 50%; top: 50%; width: 68px; height: 68px; margin: -34px 0 0 -34px; border-radius: 50%; background: rgba(200,162,74,.95); box-shadow: 0 6px 18px rgba(0,0,0,.35); }
+.lec-play::after { content: ""; position: absolute; left: 27px; top: 21px; border-left: 20px solid #2a0a0c; border-top: 13px solid transparent; border-bottom: 13px solid transparent; }
+.lec-body { padding: 1.1rem 1.3rem 1.3rem; display: flex; flex-direction: column; gap: .45rem; flex: 1; }
+.lec-body h4 { font-family: var(--font-head); font-size: 1.2rem; line-height: 1.2; color: var(--green-900); margin: 0; }
+.lec-body p { margin: 0; color: #5a4a44; font-size: .95rem; }
+.lec-meta { font-size: .82rem !important; font-weight: 700; letter-spacing: .04em; color: #8e6b22 !important; }
+.lec-link { margin-top: auto; padding-top: .4rem; font-weight: 700; font-size: .9rem; color: var(--green-700); }
