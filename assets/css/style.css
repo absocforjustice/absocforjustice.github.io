@@ -1321,3 +1321,17 @@ form.afj-form { display: grid; gap: 1rem; }
   background-image: linear-gradient(100deg, rgba(35,8,9,.85) 0%, rgba(35,8,9,.55) 40%, rgba(35,8,9,.2) 75%, rgba(35,8,9,.1) 100%), url("../img/gallery/community-legal-workshop.jpeg");
   background-size: cover; background-position: center 45%;
 }
+
+/* ---------- Basket icon in the header ---------- */
+.nav-basket {
+  flex-shrink: 0; display: grid; place-items: center;
+  width: 42px; height: 42px; margin-left: .6rem; border-radius: 50%;
+  color: #fff; border: 1px solid rgba(255,255,255,.4);
+  transition: background .2s ease, border-color .2s ease, color .2s ease;
+}
+.nav-basket:hover, .nav-basket:focus-visible, .nav-basket.is-active { color: #fff; background: rgba(200,162,74,.18); border-color: #c8a24a; }
+.nav-basket.is-active { color: #c8a24a; }
+@media (max-width: 1180px) {
+  .nav-basket { order: 1; margin-left: auto; margin-right: .5rem; }
+  .nav-toggle { order: 2; }
+}
