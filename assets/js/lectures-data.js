@@ -13,6 +13,13 @@
 */
 window.AFJ_LECTURES = [
 
+  {
+    title: "Fatema Zainab",
+    category: "AFJ Events",
+    about: "Our Al-Quds Day event.",
+    youtube: "3oYRDlQldII"
+  },
+
 
   {
     title: "The Nakba documentary series (Parts 1–4)",

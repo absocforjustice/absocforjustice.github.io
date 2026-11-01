@@ -21,7 +21,8 @@
     if (!groups[c]) { groups[c] = []; order.push(c); }
     groups[c].push(l);
   });
-  order.sort(function (a, b) { return (a === "Lectures" ? -1 : 0) - (b === "Lectures" ? -1 : 0); });
+  var rank = { "AFJ Events": 0, "Lectures": 1 };
+  order.sort(function (a, b) { return (a in rank ? rank[a] : 9) - (b in rank ? rank[b] : 9); });
 
   wrap.innerHTML = order.map(function (c) {
     return '<h3 class="lec-cat">' + esc(c) + '</h3><div class="lec-row">' + groups[c].map(function (l) {
