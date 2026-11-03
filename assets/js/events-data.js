@@ -27,8 +27,8 @@ window.AFJ_EVENTS = [
     speakers: ["Aymun Moosavi, activist", "Batool Subeiti, analyst", "Ammar Kazmi, legal expert", "Zayn Ahmed, activist", "and more"],
     topics: ["What is Islamic activism?", "How can Muslims engage in lawfare against Zionists?", "Who should Muslims vote for?", "How should Muslims combat Islamophobia?", "Street activism, direct action and more"],
     image: "assets/img/events/guide-to-islamic-activism.jpeg",
-    link: "https://instagram.com/absocforjustice",
-    linkText: "Register (£6) — link in bio"
+    link: "https://www.tickettailor.com/events/palestinehouse/2506358",
+    linkText: "Get tickets (£6)"
   },
 
 ];
