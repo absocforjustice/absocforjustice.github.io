@@ -1067,6 +1067,29 @@ form.afj-form { display: grid; gap: 1rem; }
 .camp-index .ci-group { display: flex; gap: .5rem; padding-right: .5rem; }
 .camp-index:hover .ci-track, .camp-index:focus-within .ci-track, .camp-index.paused .ci-track { animation-play-state: paused; }
 @keyframes ci-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* With JS the strip scrolls itself and can be dragged or swiped */
+.js .camp-index .ci-track { animation: none; }
+.js .camp-index .ci-viewport { overflow-x: auto; scrollbar-width: none; cursor: grab; touch-action: pan-x pan-y; }
+.js .camp-index .ci-viewport::-webkit-scrollbar { display: none; }
+.js .camp-index .ci-viewport.dragging { cursor: grabbing; user-select: none; }
+.js .camp-index .ci-viewport.dragging a { pointer-events: none; }
+
+/* Back to top button */
+.to-top {
+  position: fixed; right: clamp(1rem, 3vw, 1.75rem); bottom: clamp(1rem, 3vw, 1.75rem); z-index: 60;
+  display: inline-flex; align-items: center; gap: .45rem;
+  padding: .7rem 1.05rem; border: 1px solid var(--gold); border-radius: 999px;
+  background: var(--green-900); color: #fff; font: 600 .82rem/1 var(--font-body, Inter, sans-serif);
+  letter-spacing: .06em; text-transform: uppercase; cursor: pointer;
+  box-shadow: 0 8px 24px rgba(63,17,19,.28);
+  opacity: 0; visibility: hidden; transform: translateY(12px);
+  transition: opacity .25s, transform .25s, visibility .25s, background .2s;
+}
+.to-top.show { opacity: 1; visibility: visible; transform: none; }
+.to-top:hover, .to-top:focus-visible { background: var(--green-700); }
+.to-top svg { color: var(--gold); }
+@media (max-width: 600px) { .to-top .to-top-label { display: none; } .to-top { padding: .8rem; } }
+@media (prefers-reduced-motion: reduce) { .to-top { transition: none; } }
 @media (prefers-reduced-motion: reduce) {
   .camp-index .ci-viewport { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
   .camp-index .ci-track { animation: none; }

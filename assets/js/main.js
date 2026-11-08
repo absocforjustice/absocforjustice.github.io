@@ -159,11 +159,80 @@
   if (y) y.textContent = new Date().getFullYear();
 })();
 
-/* Campaign jump bar: pause while touched */
+/* Campaign jump bar: scrolls slowly by itself; drag (mouse) or swipe (touch) to move it.
+   Pauses while hovered, focused or handled, then carries on after a short rest. */
 (function () {
   var bar = document.querySelector(".camp-index");
-  if (!bar) return;
-  var t;
-  bar.addEventListener("touchstart", function () { clearTimeout(t); bar.classList.add("paused"); }, { passive: true });
-  bar.addEventListener("touchend", function () { t = setTimeout(function () { bar.classList.remove("paused"); }, 2500); }, { passive: true });
+  var vp = bar && bar.querySelector(".ci-viewport");
+  var group = bar && bar.querySelector(".ci-group");
+  if (!vp || !group) return;
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var SECONDS = 45;                 // time for one full lap, as before
+  var hover = false, focus = false, held = false, restUntil = 0;
+  var pos = 0, last = 0;
+
+  function loopW() { return group.offsetWidth; }
+  function wrap() {
+    var w = loopW(); if (reduce || !w) return;
+    if (pos >= w) pos -= w; else if (pos < 0) pos += w;
+  }
+  function apply() { vp.scrollLeft = pos; }
+  function rest() { restUntil = performance.now() + 2500; }
+
+  // keep our position in step with swipes, trackpads and keyboard scrolling
+  vp.addEventListener("scroll", function () {
+    if (Math.abs(vp.scrollLeft - pos) < 2) return;   // our own movement
+    pos = vp.scrollLeft; wrap(); if (Math.abs(vp.scrollLeft - pos) > 1) apply(); rest();
+  }, { passive: true });
+
+  bar.addEventListener("mouseenter", function () { hover = true; });
+  bar.addEventListener("mouseleave", function () { hover = false; });
+  bar.addEventListener("focusin", function () { focus = true; });
+  bar.addEventListener("focusout", function () { focus = false; });
+  bar.addEventListener("touchstart", function () { held = true; }, { passive: true });
+  bar.addEventListener("touchend", function () { held = false; rest(); }, { passive: true });
+
+  // mouse drag
+  var down = false, moved = false, startX = 0, startPos = 0;
+  vp.addEventListener("pointerdown", function (e) {
+    if (e.pointerType !== "mouse" || e.button !== 0) return;
+    down = true; moved = false; startX = e.clientX; startPos = pos; held = true;
+  });
+  window.addEventListener("pointermove", function (e) {
+    if (!down) return;
+    var dx = e.clientX - startX;
+    if (!moved && Math.abs(dx) > 5) { moved = true; vp.classList.add("dragging"); }
+    if (moved) { pos = startPos - dx; wrap(); apply(); e.preventDefault(); }
+  });
+  window.addEventListener("pointerup", function () {
+    if (!down) return;
+    down = false; held = false; rest();
+    if (moved) setTimeout(function () { vp.classList.remove("dragging"); }, 0);
+  });
+  // a drag should never count as a click on a country
+  vp.addEventListener("click", function (e) { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } }, true);
+  vp.addEventListener("dragstart", function (e) { e.preventDefault(); });
+
+  if (reduce) return;
+  function tick(now) {
+    var dt = last ? Math.min(now - last, 100) : 0; last = now;
+    if (!hover && !focus && !held && now > restUntil) {
+      pos += loopW() / (SECONDS * 1000) * dt; wrap(); apply();
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+
+/* Back to top button */
+(function () {
+  var btn = document.querySelector(".to-top");
+  if (!btn) return;
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function update() { btn.classList.toggle("show", window.scrollY > 700); }
+  window.addEventListener("scroll", update, { passive: true }); update();
+  btn.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+    if (history.replaceState && location.hash) history.replaceState(null, "", location.pathname + location.search);
+  });
 })();
