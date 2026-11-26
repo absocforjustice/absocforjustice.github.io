@@ -1379,3 +1379,4 @@ form.afj-form { display: grid; gap: 1rem; }
 
 /* Salawat after the Prophet's name */
 .salawat { font-family: "Amiri", "Scheherazade New", "Traditional Arabic", serif; color: var(--gold); white-space: nowrap; font-size: 1.05em; unicode-bidi: isolate; }
+.cite { font-size: .85em; opacity: .75; white-space: nowrap; }
