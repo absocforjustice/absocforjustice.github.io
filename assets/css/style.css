@@ -1391,13 +1391,3 @@ form.afj-form { display: grid; gap: 1rem; }
   }
 }
 
-/* Salawat as a compact two-line mark, like ﷺ but with "wa ālih" */
-.salawat-icon {
-  display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
-  vertical-align: middle; margin: 0 .2em; padding: .12em .32em;
-  font-family: "Amiri", "Scheherazade New", "Traditional Arabic", serif; font-weight: 700;
-  font-size: .58em; line-height: 1.05; color: var(--gold);
-  border: 1px solid rgba(200,162,74,.55); border-radius: 999px;
-  white-space: nowrap; unicode-bidi: isolate;
-}
-.salawat-icon > span { display: block; }
