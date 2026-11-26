@@ -161,7 +161,7 @@ p { margin: 0 0 1.1em; }
   position: relative;
   background:
     linear-gradient(105deg, rgba(35,8,9,.92) 30%, rgba(45,11,12,.72) 100%),
-    url("../img/gallery/afj-stall-table.jpeg") center 45%/cover no-repeat,
+    url("../img/gallery/afj-stall-table.jpeg") center 4%/cover no-repeat,
     var(--green-900);
   color: #fff;
   padding: clamp(4.5rem, 11vw, 8.5rem) 0;
@@ -1380,3 +1380,13 @@ form.afj-form { display: grid; gap: 1rem; }
 /* Salawat after the Prophet's name */
 .salawat { font-family: "Amiri", "Scheherazade New", "Traditional Arabic", serif; color: var(--gold); white-space: nowrap; font-size: 1.05em; unicode-bidi: isolate; }
 .cite { font-size: .85em; opacity: .75; white-space: nowrap; }
+
+/* Home hero on phones: crop to the tote bags */
+@media (max-width: 700px) {
+  .hero {
+    background:
+      linear-gradient(105deg, rgba(35,8,9,.92) 30%, rgba(45,11,12,.72) 100%),
+      url("../img/gallery/afj-stall-totes.jpeg") 60% center/cover no-repeat,
+      var(--green-900);
+  }
+}
