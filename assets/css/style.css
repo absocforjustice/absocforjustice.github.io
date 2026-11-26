@@ -161,7 +161,7 @@ p { margin: 0 0 1.1em; }
   position: relative;
   background:
     linear-gradient(105deg, rgba(35,8,9,.92) 30%, rgba(45,11,12,.72) 100%),
-    url("../img/gallery/afj-stall-table.jpeg") center 4%/cover no-repeat,
+    url("../img/gallery/afj-stall-totes.jpeg") right center/cover no-repeat,
     var(--green-900);
   color: #fff;
   padding: clamp(4.5rem, 11vw, 8.5rem) 0;
@@ -1386,7 +1386,7 @@ form.afj-form { display: grid; gap: 1rem; }
   .hero {
     background:
       linear-gradient(105deg, rgba(35,8,9,.92) 30%, rgba(45,11,12,.72) 100%),
-      url("../img/gallery/afj-stall-totes.jpeg") 60% center/cover no-repeat,
+      url("../img/gallery/afj-stall-totes.jpeg") 75% center/cover no-repeat,
       var(--green-900);
   }
 }
