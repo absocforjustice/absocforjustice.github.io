@@ -53,7 +53,7 @@
       (e.about ? "<p>" + esc(e.about) + "</p>" : "") + extra +
       (btns ? '<div class="ev-actions">' + btns + "</div>" : "") + "</div>" + poster + "</article>";
   }
-  var EMPTY = '<div class="ev-empty"><h3>New events announced soon</h3><p>Follow <a href="https://instagram.com/absocforjustice" target="_blank" rel="noopener">@absocforjustice</a> to hear first about our next talks, protests and workshops.</p></div>';
+  var EMPTY = '<div class="ev-empty"><h3>New events announced soon</h3><p>Follow <a href="https://instagram.com/absocforjustice" target="_blank" rel="noopener">@absocforjustice</a> on Instagram to hear first about our next events, protests and mobilisations.</p></div>';
 
   document.querySelectorAll("[data-events]").forEach(function (box) {
     var kind = box.getAttribute("data-events");
