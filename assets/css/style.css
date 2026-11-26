@@ -1376,3 +1376,6 @@ form.afj-form { display: grid; gap: 1rem; }
 .lec-body p { margin: 0; color: #5a4a44; font-size: .95rem; }
 .lec-meta { font-size: .82rem !important; font-weight: 700; letter-spacing: .04em; color: #8e6b22 !important; }
 .lec-link { margin-top: auto; padding-top: .4rem; font-weight: 700; font-size: .9rem; color: var(--green-700); }
+
+/* Salawat after the Prophet's name */
+.salawat { font-family: "Amiri", "Scheherazade New", "Traditional Arabic", serif; color: var(--gold); white-space: nowrap; font-size: 1.05em; unicode-bidi: isolate; }
