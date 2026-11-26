@@ -1378,7 +1378,7 @@ form.afj-form { display: grid; gap: 1rem; }
 .lec-link { margin-top: auto; padding-top: .4rem; font-weight: 700; font-size: .9rem; color: var(--green-700); }
 
 /* Salawat after the Prophet's name */
-.salawat { font-family: "Amiri", "Scheherazade New", "Traditional Arabic", serif; color: var(--gold); white-space: nowrap; font-size: 1.05em; unicode-bidi: isolate; }
+.salawat { font-family: "Amiri", "Scheherazade New", "Traditional Arabic", serif; color: var(--gold); white-space: nowrap; font-size: .9em; unicode-bidi: isolate; }
 .cite { font-size: .85em; opacity: .75; white-space: nowrap; }
 
 /* Home hero on phones: crop to the tote bags */
